@@ -1,0 +1,14 @@
+# Локални секрети (SESSION_SECRET и др.)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Виртуална среда
+.venv/
+venv/
+
+# Локална SQLite — генерира се при работа; books.csv остава в Git
+data/*.db
+*.db-journal

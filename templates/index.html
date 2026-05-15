@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Книги · Препоръчваща система</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Само вход / регистрация преди сесия -->
+  <div id="landingScreen" class="landing-screen">
+    <div class="landing-card">
+      <div class="landing-brand">
+        <span class="logo landing-logo">◆</span>
+        <div>
+          <h1 class="landing-title">Каталог и препоръки</h1>
+          <p class="landing-tagline">Вход или нова регистрация.</p>
+        </div>
+      </div>
+
+      <div class="landing-tabs" role="tablist">
+        <button type="button" class="landing-tab active" id="landingTabLogin" role="tab" aria-selected="true">Вход</button>
+        <button type="button" class="landing-tab" id="landingTabReg" role="tab" aria-selected="false">Регистрация</button>
+      </div>
+
+      <div id="landingLoginPane" class="landing-pane" role="tabpanel">
+        <label class="landing-field">
+          <span class="landing-label">Потребител</span>
+          <input type="text" id="loginUser" placeholder="потребителско име" autocomplete="username" />
+        </label>
+        <label class="landing-field">
+          <span class="landing-label">Парола</span>
+          <input type="password" id="loginPass" placeholder="••••••" autocomplete="current-password" />
+        </label>
+        <button type="button" class="btn primary landing-submit" id="btnLogin">Вход</button>
+        <p class="landing-demo hint">Демо акаунт: <strong>nikol</strong> / <strong>demo123</strong></p>
+      </div>
+
+      <div id="landingRegisterPane" class="landing-pane hidden" role="tabpanel">
+        <div class="reg-grid reg-grid-account">
+          <input type="text" id="regUser" placeholder="потребителско име" autocomplete="username" />
+          <input type="email" id="regEmail" placeholder="имейл (по желание)" />
+          <input type="password" id="regPass" placeholder="парола (мин. 6)" autocomplete="new-password" />
+        </div>
+        <div class="reg-survey landing-reg-survey">
+          <h4 class="mini-h">Колко обичаш да четеш?</h4>
+          <div class="pace-row" role="radiogroup" aria-label="Темпо на четене">
+            <label class="pace"><input type="radio" name="regPace" value="light" /> По-малко</label>
+            <label class="pace"><input type="radio" name="regPace" value="steady" checked /> Умерено</label>
+            <label class="pace"><input type="radio" name="regPace" value="avid" /> Много</label>
+          </div>
+          <h4 class="mini-h">Настроение</h4>
+          <div id="regMoods" class="chips toggle survey-picks"></div>
+          <h4 class="mini-h">Формат</h4>
+          <div id="regFormats" class="chips toggle survey-picks"></div>
+          <label class="full">Бележка (по желание)
+            <textarea id="regSurveyNote" rows="2" placeholder="Кратко какво обичаш да четеш"></textarea>
+          </label>
+        </div>
+        <button type="button" class="btn primary landing-submit" id="btnReg">Създай акаунт</button>
+      </div>
+
+      <p class="landing-version" id="verLabelLanding" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div id="appShell" class="app-shell hidden">
+    <header class="top">
+      <div class="brand">
+        <span class="logo">◆</span>
+        <div>
+          <h1>Каталог и препоръки</h1>
+        </div>
+      </div>
+      <div class="user-bar">
+        <span id="whoami"></span>
+        <button type="button" class="btn" id="btnLogout">Изход</button>
+        <span class="ver" id="verLabel" title="Версия / среда"></span>
+      </div>
+    </header>
+
+    <div id="appWrap">
+      <nav class="tabs" role="tablist">
+        <button type="button" class="tab active" data-tab="feed">За теб</button>
+        <button type="button" class="tab" data-tab="browse">Каталог</button>
+        <button type="button" class="tab" data-tab="popular">Популярни</button>
+        <button type="button" class="tab" data-tab="library">Моята библиотека</button>
+        <button type="button" class="tab" data-tab="friends">Приятели</button>
+        <button type="button" class="tab" data-tab="eval">Оценка</button>
+      </nav>
+
+      <main>
+        <section id="tab-feed" class="panel active">
+          <div class="panel-head">
+            <h2>Препоръки</h2>
+            <div class="controls">
+              <label class="slider-label">Разнообразие
+                <input type="range" id="diversity" min="0.2" max="0.95" step="0.01" value="0.72" />
+              </label>
+              <button type="button" class="btn primary" id="btnRefreshRec">Обнови препоръките</button>
+            </div>
+          </div>
+          <div id="recList" class="card-grid"></div>
+        </section>
+
+        <section id="tab-browse" class="panel">
+          <div class="panel-head">
+            <h2>Всички книги</h2>
+            <input type="search" id="bookFilter" class="search" placeholder="Търси заглавие, автор или жанр…" />
+          </div>
+          <div class="ol-fetch">
+            <h3 class="mini-h">Импорт от Open Library</h3>
+            <div class="row ol-fetch-row">
+              <input type="search" id="olQuery" class="search ol-query" placeholder="Търсене…" />
+              <label class="ol-num">До <input type="number" id="olLimit" min="1" max="80" value="25" /></label>
+              <label class="ol-chk"><input type="checkbox" id="olDetails" /> с описания</label>
+              <span id="olTokenWrap" class="hidden ol-token-wrap"><input type="text" id="olToken" autocomplete="off" placeholder="Catalog token" /></span>
+              <button type="button" class="btn primary" id="btnOlFetch">Импорт</button>
+            </div>
+          </div>
+          <div id="bookList" class="card-grid"></div>
+        </section>
+
+        <section id="tab-popular" class="panel">
+          <div class="panel-head"><h2>Популярни в общността</h2></div>
+          <div id="popularList" class="card-grid"></div>
+        </section>
+
+        <section id="tab-library" class="panel">
+          <div class="panel-head"><h2>Моята библиотека</h2></div>
+          <div class="lib-columns">
+            <div><h3>To-Read</h3><div id="libToRead" class="mini-list"></div></div>
+            <div><h3>Прочетени</h3><div id="libFinished" class="mini-list"></div></div>
+            <div><h3>Любими</h3><div id="libFav" class="mini-list"></div></div>
+          </div>
+        </section>
+
+        <section id="tab-friends" class="panel">
+          <div class="panel-head">
+            <h2>Приятели</h2>
+            <div class="row">
+              <input type="text" id="friendName" placeholder="потребителско име" />
+              <button type="button" class="btn" id="btnAddFriend">Добави</button>
+            </div>
+          </div>
+          <div id="friendsList" class="chips"></div>
+        </section>
+
+        <section id="tab-eval" class="panel">
+          <div class="panel-head eval-panel-head">
+            <h2>Оценка</h2>
+            <label class="eval-k-label">K
+              <select id="evalK" aria-label="K за метриките">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+              </select>
+            </label>
+          </div>
+          <div class="table-wrap">
+            <table class="eval-table" id="evalTable">
+              <thead>
+                <tr><th>Метод</th><th>P@K</th><th>R@K</th><th>NDCG@K</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Cold start квиз като модал след регистрация / вход -->
+  <div id="onboardingModal" class="onboarding-modal hidden" aria-hidden="true">
+    <div class="onboarding-modal-bg"></div>
+    <div
+      class="onboarding-modal-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="quizModalTitle"
+      tabindex="-1"
+    >
+      <h2 class="quiz-title quiz-modal-title" id="quizModalTitle">Настрой профила</h2>
+      <div id="onboardingWizard" class="onboarding-wizard onboarding-wizard-modal">
+        <div
+          class="quiz-progress-wrap"
+          id="quizProgressWrap"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="25"
+          aria-label="Напредък"
+        >
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-bar" id="quizProgressBar"></div>
+          </div>
+          <p class="quiz-step-meta" id="quizStepMeta">Стъпка 1 от 4</p>
+        </div>
+
+        <div class="quiz-pane" data-quiz-step="0" role="region" aria-labelledby="quizIntroHeading">
+          <h3 class="quiz-pane-title" id="quizIntroHeading">Започни</h3>
+          <p class="hint quiz-tip">Три стъпки: жанрове, език и автори, реакции към няколко книги.</p>
+        </div>
+
+        <div class="quiz-pane hidden" data-quiz-step="1" role="region" aria-labelledby="quizGenresHeading">
+          <h3 class="quiz-pane-title" id="quizGenresHeading">Жанрове</h3>
+          <p class="hint quiz-pane-hint">Избери поне един.</p>
+          <div id="genrePick" class="chips toggle quiz-genre-grid"></div>
+        </div>
+
+        <div class="quiz-pane hidden" data-quiz-step="2" role="region" aria-labelledby="quizLangHeading">
+          <h3 class="quiz-pane-title" id="quizLangHeading">Език и автори</h3>
+          <div class="row quiz-lang-row">
+            <label>Език
+              <select id="onbLang">
+                <option value="bg">Български</option>
+                <option value="en">Английски</option>
+                <option value="both">И двата</option>
+              </select>
+            </label>
+          </div>
+          <label class="full">Автори <span class="optional-mark">(по желание)</span>
+            <textarea id="onbAuthors" rows="3" placeholder="Име на автори, разделени със запетая"></textarea>
+          </label>
+        </div>
+
+        <div class="quiz-pane hidden" data-quiz-step="3" role="region" aria-labelledby="quizTasteHeading">
+          <h3 class="quiz-pane-title" id="quizTasteHeading">Реакции към книги</h3>
+          <div class="quiz-taste-toolbar">
+            <button type="button" class="btn" id="btnReloadTaste">Други заглавия</button>
+          </div>
+          <div id="tasteDeck" class="taste-deck taste-deck-quiz"></div>
+        </div>
+
+        <footer class="quiz-nav quiz-nav-modal">
+          <button type="button" class="btn" id="quizPrev">Назад</button>
+          <button type="button" class="btn primary" id="quizNext">Напред</button>
+          <button type="button" class="btn primary hidden" id="quizFinish">Запази</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button type="button" class="drawer-close" id="drawerClose" aria-label="Затвори">×</button>
+    <div id="drawerBody"></div>
+  </aside>
+  <div id="backdrop" class="backdrop"></div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

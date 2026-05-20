@@ -38,6 +38,14 @@ const api = (path, opts = {}) =>
     return r.text();
   });
 
+function debounce(fn, wait) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(null, args), wait);
+  };
+}
+
 const SURVEY_MOODS = [
   { label: "Литература / характер", tag: "literary" },
   { label: "Фентъзи и мит", tag: "fantasy" },
@@ -91,6 +99,9 @@ function collectRegSurvey() {
 let currentMe = null;
 let tasteState = [];
 let onboardingQuizStep = 0;
+let browseQuery = "";
+let browseOffset = 0;
+let evalLoadedOnce = false;
 
 const QUIZ_STEP_LABELS = [
   "Стъпка 1 от 4",
@@ -321,14 +332,29 @@ function requireSession() {
 
 async function openBookDrawer(bookId) {
   if (currentMe) await loadBookSignals().catch(() => {});
-  const book = await api(`/api/books/${bookId}`);
-  const sim = await api(`/api/similar/${bookId}?k=8`);
+  const [book, sim, stats] = await Promise.all([
+    api(`/api/books/${bookId}`),
+    api(`/api/similar/${bookId}?k=8`),
+    api(`/api/books/${bookId}/stats`).catch(() => null),
+  ]);
   let social = { explanation: null };
   if (currentMe) {
     try {
       social = await api(`/api/book-social/${bookId}`);
     } catch (_) {}
   }
+  const statsHtml =
+    stats && (stats.rating_count || stats.like_count || stats.finished_count || stats.to_read_count)
+      ? `
+      <div class="book-stats">
+        ${stats.avg_rating != null ? `<span>⭐ ${stats.avg_rating}</span>` : ""}
+        ${stats.rating_count ? `<span>(${stats.rating_count} оценки)</span>` : ""}
+        ${stats.like_count ? `<span>👍 ${stats.like_count}</span>` : ""}
+        ${stats.finished_count ? `<span>✅ ${stats.finished_count}</span>` : ""}
+        ${stats.to_read_count ? `<span>📌 ${stats.to_read_count}</span>` : ""}
+      </div>
+      `
+      : "";
   const drawer = document.getElementById("drawerBody");
   const mineBlock =
     currentMe &&
@@ -343,6 +369,7 @@ async function openBookDrawer(bookId) {
       <img class="drawer-cover" src="${escapeHtml(coverSrc(book))}" alt="" />
       <h2>${escapeHtml(book.title)}</h2>
       <p class="meta">${escapeHtml(book.authors)}</p>
+      ${statsHtml}
       <p>${escapeHtml(book.description)}</p>
       <p class="tags">${escapeHtml(book.tags)}</p>
       ${social.explanation ? `<p class="why">${escapeHtml(social.explanation)}</p>` : ""}
@@ -457,49 +484,154 @@ async function refreshMe() {
 }
 
 async function loadRecommendations() {
-  requireSession();
-  await loadBookSignals().catch(() => {});
-  const k = 12;
-  const div = parseFloat(document.getElementById("diversity").value);
-  const data = await api(`/api/recommendations?k=${k}&diversity=${div}`);
-  const root = document.getElementById("recList");
-  root.innerHTML = "";
-  data.forEach((item) => {
-    root.appendChild(
-      bookCard(item.book, { why: item.explanation })
-    );
-  });
+  const btn = document.getElementById("btnRefreshRec");
+  const oldText = btn ? btn.textContent : "";
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Зареждане…";
+  }
+  try {
+    requireSession();
+    await loadBookSignals().catch(() => {});
+    const k = 12;
+    const data = await api(`/api/recommendations?k=${k}`);
+    const root = document.getElementById("recList");
+    root.innerHTML = "";
+    data.forEach((item) => {
+      root.appendChild(bookCard(item.book, { why: item.explanation }));
+    });
+  } catch (e) {
+    const msg = String(e.message || e);
+    showToast(msg, true);
+    throw e;
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = oldText || "Обнови препоръките";
+    }
+  }
 }
 
-async function loadBooks() {
-  const data = await api("/api/books");
-  window.__allBooks = data;
-  await renderBookFilter();
+async function loadFriendRecommendations() {
+  const btn = document.getElementById("btnRefreshFriendsRec");
+  const oldText = btn ? btn.textContent : "";
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Зареждане…";
+  }
+  try {
+    requireSession();
+    const data = await api("/api/friends/recommendations?limit=12");
+    const root = document.getElementById("friendsRecList");
+    if (!root) return;
+    root.innerHTML = "";
+    if (!data || !data.length) {
+      const p = document.createElement("p");
+      p.className = "hint";
+      p.textContent = "Още нямаш приятели или няма нови предложения от тях.";
+      root.appendChild(p);
+      return;
+    }
+    data.forEach((item) => {
+      root.appendChild(bookCard(item.book, { why: item.explanation }, { interactive: false }));
+    });
+  } catch (e) {
+    const msg = String(e.message || e);
+    showToast(msg, true);
+    throw e;
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = oldText || "Обнови";
+    }
+  }
+}
+
+async function loadBooks({ append = false } = {}) {
+  const root = document.getElementById("bookList");
+  if (!root) return;
+
+  const capEl = document.getElementById("browseCapHint");
+  const moreBtn = document.getElementById("btnLoadMore");
+
+  const q = (document.getElementById("bookFilter")?.value || "").trim();
+  const qNorm = q.toLowerCase();
+  if (!append || qNorm !== browseQuery) {
+    browseQuery = qNorm;
+    browseOffset = 0;
+    append = false;
+  }
+
+  if (moreBtn) {
+    moreBtn.disabled = true;
+    moreBtn.textContent = "Зареждане…";
+  }
+  if (!append && capEl) {
+    capEl.textContent = "Зареждане…";
+    capEl.classList.remove("hidden");
+  }
+
+  const limit = 80;
+  let hasMore = false;
+  let ok = false;
+  try {
+    const res = await api(
+      `/api/books?limit=${limit}&offset=${browseOffset}&q=${encodeURIComponent(qNorm)}`
+    );
+
+    const items = Array.isArray(res?.items) ? res.items : [];
+    hasMore = !!res?.has_more;
+
+    if (!append) root.innerHTML = "";
+    items.forEach((b) => root.appendChild(bookCard(b, {}, { interactive: false })));
+
+    browseOffset += items.length;
+    ok = true;
+  } catch (e) {
+    const msg = String(e.message || e);
+    showToast(msg, true);
+    if (capEl) {
+      capEl.textContent = msg;
+      capEl.classList.remove("hidden");
+    }
+    hasMore = false;
+  } finally {
+    if (ok && capEl) {
+      if (!browseOffset) {
+        capEl.textContent = qNorm ? "Няма резултати." : "Няма книги в каталога.";
+        capEl.classList.remove("hidden");
+      } else if (hasMore) {
+        capEl.textContent = `Показани са първите ${browseOffset} резултата. Можеш да уточниш търсенето или да заредиш още.`;
+        capEl.classList.remove("hidden");
+      } else {
+        capEl.textContent = "";
+        capEl.classList.add("hidden");
+      }
+    }
+
+    if (moreBtn) {
+      if (ok && hasMore) {
+        moreBtn.classList.remove("hidden");
+        moreBtn.disabled = false;
+        moreBtn.textContent = "Покажи още";
+      } else {
+        moreBtn.classList.add("hidden");
+        moreBtn.disabled = false;
+        moreBtn.textContent = "Покажи още";
+      }
+    }
+  }
 }
 
 async function renderBookFilter() {
-  if (currentMe) await loadBookSignals().catch(() => {});
-  const q = (document.getElementById("bookFilter")?.value || "").toLowerCase();
-  const root = document.getElementById("bookList");
-  if (!root || !window.__allBooks) return;
-  root.innerHTML = "";
-  window.__allBooks
-    .filter(
-      (b) =>
-        !q ||
-        b.title.toLowerCase().includes(q) ||
-        b.authors.toLowerCase().includes(q) ||
-        b.tags.toLowerCase().includes(q)
-    )
-    .forEach((b) => root.appendChild(bookCard(b, {}, { interactive: !!currentMe })));
+  await loadBooks({ append: false });
 }
 
 async function loadPopular() {
-  if (currentMe) await loadBookSignals().catch(() => {});
   const data = await api("/api/popular?limit=16");
   const root = document.getElementById("popularList");
   root.innerHTML = "";
-  data.forEach((b) => root.appendChild(bookCard(b, {}, { interactive: !!currentMe })));
+  data.forEach((b) => root.appendChild(bookCard(b, {}, { interactive: false })));
 }
 
 async function loadLibrary() {
@@ -534,31 +666,203 @@ async function loadFriends() {
   });
 }
 
+async function loadFriendRequests() {
+  requireSession();
+  const inRoot = document.getElementById("incomingReqs");
+  const outRoot = document.getElementById("outgoingReqs");
+  if (!inRoot || !outRoot) return;
+
+  inRoot.innerHTML = '<p class="hint">Зареждане…</p>';
+  outRoot.innerHTML = '<p class="hint">Зареждане…</p>';
+  const res = await api("/api/friends/requests");
+  const incoming = Array.isArray(res?.incoming) ? res.incoming : [];
+  const outgoing = Array.isArray(res?.outgoing) ? res.outgoing : [];
+
+  inRoot.innerHTML = "";
+  if (!incoming.length) {
+    inRoot.innerHTML = '<p class="hint">Няма входящи покани.</p>';
+  } else {
+    incoming.forEach((r) => {
+      const row = document.createElement("div");
+      row.className = "req-row";
+      row.innerHTML = `
+        <div class="req-row__main">
+          <strong>${escapeHtml(r.from_user.username)}</strong>
+          <div class="req-row__meta">иска да те добави</div>
+        </div>
+        <div class="req-row__actions">
+          <button type="button" class="btn small primary">Приеми</button>
+          <button type="button" class="btn small danger">Откажи</button>
+        </div>
+      `;
+      const [btnOk, btnNo] = row.querySelectorAll("button");
+      btnOk.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        await api(`/api/friends/requests/${r.id}/accept`, { method: "POST" });
+        showToast("Поканата е приета.");
+        await Promise.allSettled([loadFriendRequests(), loadFriends(), loadFriendRecommendations()]);
+      });
+      btnNo.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        await api(`/api/friends/requests/${r.id}/decline`, { method: "POST" });
+        showToast("Поканата е отказана.");
+        await loadFriendRequests();
+      });
+      inRoot.appendChild(row);
+    });
+  }
+
+  outRoot.innerHTML = "";
+  if (!outgoing.length) {
+    outRoot.innerHTML = '<p class="hint">Няма изпратени покани.</p>';
+  } else {
+    outgoing.forEach((r) => {
+      const row = document.createElement("div");
+      row.className = "req-row";
+      row.innerHTML = `
+        <div class="req-row__main">
+          <strong>${escapeHtml(r.to_user.username)}</strong>
+          <div class="req-row__meta">изпратена покана</div>
+        </div>
+        <div class="req-row__actions">
+          <button type="button" class="btn small danger">Отмени</button>
+        </div>
+      `;
+      row.querySelector("button").addEventListener("click", async (e) => {
+        e.stopPropagation();
+        await api(`/api/friends/requests/${r.id}/cancel`, { method: "POST" });
+        showToast("Поканата е отменена.");
+        await loadFriendRequests();
+      });
+      outRoot.appendChild(row);
+    });
+  }
+}
+
+async function sendFriendRequest(username) {
+  try {
+    requireSession();
+    const res = await api("/api/friends/requests", {
+      method: "POST",
+      body: JSON.stringify({ friend_username: username }),
+    });
+    if (res?.already_friends) showToast("Вече сте приятели.");
+    else if (res?.duplicate) showToast("Вече имаш изпратена покана.");
+    else showToast("Поканата е изпратена.");
+    await loadFriendRequests().catch(() => {});
+  } catch (e) {
+    showToast(String(e.message || e), true);
+  }
+}
+
+async function searchUsers(raw) {
+  const root = document.getElementById("userSearchResults");
+  if (!root) return;
+  const q = String(raw || "").trim();
+  if (q.length < 2) {
+    root.innerHTML = "";
+    return;
+  }
+  try {
+    requireSession();
+    root.innerHTML = '<p class="hint">Търсене…</p>';
+    const data = await api(`/api/users/search?q=${encodeURIComponent(q)}&limit=12`);
+    root.innerHTML = "";
+    if (!data || !data.length) {
+      root.innerHTML = '<p class="hint">Няма резултати.</p>';
+      return;
+    }
+    data.forEach((u) => {
+      const row = document.createElement("div");
+      row.className = "user-row";
+      row.innerHTML = `
+        <div class="user-row__name">${escapeHtml(u.username)}</div>
+        <div class="user-row__actions">
+          <button type="button" class="btn small">Покани</button>
+        </div>
+      `;
+      row.querySelector("button").addEventListener("click", (e) => {
+        e.stopPropagation();
+        sendFriendRequest(u.username);
+      });
+      root.appendChild(row);
+    });
+  } catch (e) {
+    root.innerHTML = "";
+    showToast(String(e.message || e), true);
+  }
+}
+
+async function loadFriendsPage() {
+  await Promise.allSettled([loadFriends(), loadFriendRequests()]);
+}
+
 async function loadEval() {
   const kSel = document.getElementById("evalK");
-  const k = kSel ? parseInt(kSel.value || "10", 10) : 10;
-  const rep = await api(`/api/evaluation?k=${k}`);
+  const btn = document.getElementById("btnRunEval");
+  const noteEl = document.getElementById("evalNote");
+  const repEl = document.getElementById("evalReport");
   const tb = document.querySelector("#evalTable tbody");
   if (!tb) return;
-  tb.innerHTML = "";
-  rep.rows.forEach((r) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${escapeHtml(r.method)}</td><td>${r.precision_at_k}</td><td>${r.recall_at_k}</td><td>${r.ndcg_at_k}</td>`;
-    tb.appendChild(tr);
-  });
+
+  const k = kSel ? parseInt(kSel.value || "10", 10) : 10;
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Изчисляване…";
+  }
+  if (noteEl) noteEl.textContent = "Изчисляване на метриките…";
+
+  try {
+    const rep = await api(`/api/evaluation?k=${k}`);
+    tb.innerHTML = "";
+    rep.rows.forEach((r) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${escapeHtml(r.method)}</td><td>${r.precision_at_k}</td><td>${r.recall_at_k}</td><td>${r.ndcg_at_k}</td>`;
+      tb.appendChild(tr);
+    });
+    evalLoadedOnce = true;
+    if (noteEl) {
+      const fold = rep.users_in_fold ? ` · fold users: ${rep.users_in_fold}` : "";
+      noteEl.textContent = (rep.note || "").trim() ? `${rep.note}${fold}` : (fold ? fold.slice(3) : "");
+    }
+    if (repEl) {
+      repEl.innerHTML = `
+        <p><strong>Проблем:</strong> ${escapeHtml(rep.problem_statement || "")}</p>
+        <p><strong>Хипотеза:</strong> ${escapeHtml(rep.hypothesis || "")}</p>
+        <p><strong>Методология:</strong> ${escapeHtml(rep.methodology || "")}</p>
+        <p><strong>Ограничения:</strong> ${escapeHtml(rep.limitations || "")}</p>
+      `;
+    }
+    showToast("Оценката е готова.");
+  } catch (e) {
+    const msg = String(e.message || e);
+    showToast(msg, true);
+    if (noteEl) noteEl.textContent = msg;
+    throw e;
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "Изчисли";
+    }
+  }
 }
 
 function setupEvalControls() {
   const kSel = document.getElementById("evalK");
-  if (!kSel) return;
-  kSel.addEventListener("change", () => loadEval().catch((e) => showToast(String(e.message || e), true)));
+  const btn = document.getElementById("btnRunEval");
+  if (btn) btn.addEventListener("click", () => loadEval().catch(() => {}));
+  if (kSel) {
+    kSel.addEventListener("change", () => {
+      if (evalLoadedOnce) loadEval().catch(() => {});
+    });
+  }
 }
 
 function setupTabs() {
   document.querySelectorAll(".tab").forEach((tab) => {
     tab.addEventListener("click", () => {
       const name = tab.dataset.tab;
-      const needAuth = ["feed", "browse", "popular", "library", "friends", "eval"].includes(name);
+      const needAuth = ["feed", "browse", "library", "friends", "eval"].includes(name);
       if (!currentMe && needAuth) {
         showToast("Влез или се регистрирай.", true);
         return;
@@ -568,10 +872,9 @@ function setupTabs() {
       tab.classList.add("active");
       document.getElementById("tab-" + name).classList.add("active");
       if (name === "browse") renderBookFilter().catch(() => {});
-      if (name === "popular") loadPopular();
-      if (name === "library") loadLibrary();
-      if (name === "friends") loadFriends();
-      if (name === "eval") loadEval();
+      if (name === "library") loadLibrary().catch(() => {});
+      if (name === "friends") loadFriendsPage().catch(() => {});
+      if (name === "eval" && !evalLoadedOnce) loadEval().catch(() => {});
     });
   });
 }
@@ -791,10 +1094,7 @@ function setupOnboarding() {
 async function refreshAll() {
   if (!currentMe) return;
   await loadBookSignals().catch(() => {});
-  await loadRecommendations();
-  await loadBooks();
-  await loadLibrary();
-  await loadFriends();
+  await Promise.allSettled([loadRecommendations(), loadFriendRecommendations(), loadPopular()]);
 }
 
 function setupLandingTabs() {
@@ -845,21 +1145,23 @@ async function init() {
   setupOnboarding();
   setupEvalControls();
 
-  document.getElementById("btnRefreshRec").addEventListener("click", loadRecommendations);
-  document.getElementById("bookFilter").addEventListener("input", () => {
-    renderBookFilter().catch(() => {});
-  });
-  document.getElementById("btnAddFriend").addEventListener("click", async () => {
-    const name = document.getElementById("friendName").value.trim();
-    if (!name) return;
-    requireSession();
-    await api("/api/friends", {
-      method: "POST",
-      body: JSON.stringify({ friend_username: name }),
-    });
-    document.getElementById("friendName").value = "";
-    loadFriends();
-  });
+  document.getElementById("btnRefreshRec").addEventListener("click", () => loadRecommendations().catch(() => {}));
+  const btnFR = document.getElementById("btnRefreshFriendsRec");
+  if (btnFR) btnFR.addEventListener("click", () => loadFriendRecommendations().catch(() => {}));
+  const bf = document.getElementById("bookFilter");
+  if (bf) {
+    const run = debounce(() => renderBookFilter().catch(() => {}), 160);
+    bf.addEventListener("input", run);
+  }
+  const more = document.getElementById("btnLoadMore");
+  if (more) {
+    more.addEventListener("click", () => loadBooks({ append: true }).catch(() => {}));
+  }
+  const us = document.getElementById("userSearch");
+  if (us) {
+    const runSearch = debounce(() => searchUsers(us.value), 180);
+    us.addEventListener("input", runSearch);
+  }
   document.getElementById("drawerClose").addEventListener("click", closeDrawer);
   document.getElementById("backdrop").addEventListener("click", () => {
     if (document.body.classList.contains("modal-quiz-open")) return;
@@ -875,8 +1177,6 @@ async function init() {
         body: JSON.stringify({ username: u, password: p }),
       });
       setAuthUI();
-      await loadBooks();
-      await loadPopular();
       await refreshAll();
       if (!currentMe.onboarding_completed) {
         launchColdStartQuiz();
@@ -896,8 +1196,6 @@ async function init() {
         body: JSON.stringify({ username: u, password: p, email: e || null, survey }),
       });
       setAuthUI();
-      await loadBooks();
-      await loadPopular();
       await refreshAll();
       if (!currentMe.onboarding_completed) {
         launchColdStartQuiz();
@@ -953,8 +1251,6 @@ async function init() {
   });
 
   if (currentMe) {
-    await loadBooks();
-    await loadPopular();
     if (!currentMe.onboarding_completed) {
       launchColdStartQuiz();
     }

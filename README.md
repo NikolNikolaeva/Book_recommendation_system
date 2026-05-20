@@ -99,7 +99,7 @@ docker compose up --build
 - `POST /api/catalog/fetch-openlibrary` — `{ "query", "limit", "fetch_descriptions"? }`; при `CATALOG_ADMIN_TOKEN` — заглавка `X-Catalog-Token`.
 - `GET /api/onboarding/taste-deck?n=12` — произволни книги без досегашни взаимодействия
 - `POST /api/onboarding/complete` — пълен cold start (genres, language, authors, quick_reactions)
-- `GET /api/recommendations?k=12&diversity=0.72`
+- `GET /api/recommendations?k=12` (MMR разнообразието е фиксирано по подразбиране)
 - `POST /api/interactions` — тяло: `{ "book_id", "event_type", "rating"?, "comment"? }`
 - `GET /api/library`, `GET|POST /api/friends`, …
 - `GET /api/evaluation?k=10` — без вход; връща P@K/R@K/NDCG за Popular, CBF, CF, Hybrid, Hybrid+Social, плюс **проблем / хипотеза / методология / ограничения** и брой потребители във fold (за текстов отчет и таб „Оценка“).

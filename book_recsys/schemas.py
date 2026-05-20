@@ -23,6 +23,35 @@ class BookOut(BaseModel):
         from_attributes = True
 
 
+class BookCardOut(BaseModel):
+    """Лек модел за списъци/каталог (без description) за по-бърз UI."""
+
+    id: int
+    title: str
+    authors: str
+    tags: str
+    language: str
+    year: int | None = None
+    isbn: str | None = None
+    cover_url: str | None = None
+
+    class Config:
+        from_attributes = True
+
+
+class BookListResponse(BaseModel):
+    items: list[BookCardOut]
+    has_more: bool
+
+
+class BookStatsOut(BaseModel):
+    avg_rating: float | None = None
+    rating_count: int = 0
+    like_count: int = 0
+    finished_count: int = 0
+    to_read_count: int = 0
+
+
 class RegisterSurveyIn(BaseModel):
     """Лека анкета при регистрация — подобрява cold start преди пълния onboarding."""
 
@@ -126,6 +155,19 @@ class FriendAdd(BaseModel):
 class FriendOut(BaseModel):
     id: int
     username: str
+
+
+class FriendRequestOut(BaseModel):
+    id: int
+    from_user: FriendOut
+    to_user: FriendOut
+    status: str
+    created_at: datetime
+
+
+class FriendRequestsResponse(BaseModel):
+    incoming: list[FriendRequestOut]
+    outgoing: list[FriendRequestOut]
 
 
 class RecommendationItem(BaseModel):

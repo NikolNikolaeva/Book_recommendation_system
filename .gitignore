@@ -12,3 +12,8 @@ venv/
 # Локална SQLite — генерира се при работа; books.csv остава в Git
 data/*.db
 *.db-journal
+*.db-wal
+*.db-shm
+
+# Goodreads/goodbooks — големи CSV (виж data/goodbooks/README.md)
+data/goodbooks/*.csv

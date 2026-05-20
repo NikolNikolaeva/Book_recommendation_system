@@ -10,16 +10,24 @@ from book_recsys.config import CF_SVD_COMPONENTS
 
 
 def interaction_weight(event_type: str, rating: float | None) -> float:
+    """
+    Тегло за CF (implicit Top‑N).
+
+    Важно: ниски оценки НЕ са положителен сигнал — за Top‑N третираме като 0.
+    """
     if event_type == "dislike":
         return 0.0
     if event_type == "like":
-        return 4.0
-    if event_type == "to_read":
-        return 3.0
+        return 1.0
     if event_type == "finished":
-        return 4.5
+        return 1.0
+    if event_type == "to_read":
+        return 0.7
     if event_type == "rating" and rating is not None:
-        return float(rating)
+        r = float(rating)
+        if r >= 4.0:
+            return 1.0 + 0.2 * (r - 4.0)  # 4★→1.0, 5★→1.2
+        return 0.0
     return 0.0
 
 
@@ -41,8 +49,6 @@ class CFModel:
         self._svd: TruncatedSVD | None = None
         self._user_factors: np.ndarray | None = None
         self._item_factors: np.ndarray | None = None
-        self._user_means: np.ndarray | None = None
-        self._train_global_mean: float = 0.0
 
     def fit(self, R: csr_matrix) -> None:
         """R: users x items sparse matrix."""
@@ -50,16 +56,17 @@ class CFModel:
             self._svd = None
             self._user_factors = None
             self._item_factors = None
-            self._user_means = None
-            self._train_global_mean = 0.0
             return
 
-        dense = R.toarray()
-        self._user_means = dense.mean(axis=1, keepdims=True)
-        centered = dense - self._user_means
-        self._train_global_mean = float(dense.mean())
+        n_users, n_items = R.shape
+        if n_users < 2 or n_items < 2:
+            self._svd = None
+            self._user_factors = None
+            self._item_factors = None
+            return
 
-        n_users, n_items = centered.shape
+        # TruncatedSVD работи директно със sparse матрица (implicit матрица от положителни сигнали).
+        mat = R
         n_comp = min(CF_SVD_COMPONENTS, n_users - 1, n_items - 1)
         if n_comp < 1:
             self._svd = None
@@ -68,7 +75,7 @@ class CFModel:
             return
 
         self._svd = TruncatedSVD(n_components=n_comp, random_state=42)
-        self._user_factors = self._svd.fit_transform(centered)
+        self._user_factors = self._svd.fit_transform(mat)
         self._item_factors = self._svd.components_.T
 
     def predict_scores_for_user(self, user_row_index: int, n_items: int) -> np.ndarray:
@@ -76,15 +83,13 @@ class CFModel:
             self._svd is None
             or self._user_factors is None
             or self._item_factors is None
-            or self._user_means is None
         ):
             return np.zeros(n_items, dtype=np.float64)
         if user_row_index < 0 or user_row_index >= self._user_factors.shape[0]:
             return np.zeros(n_items, dtype=np.float64)
         u = self._user_factors[user_row_index]
-        pred_centered = u @ self._item_factors.T
-        pred = pred_centered + float(self._user_means[user_row_index, 0])
-        pred = np.clip(pred, 0.0, 5.0)
+        pred = u @ self._item_factors.T
+        pred = np.maximum(pred, 0.0)
         m = float(pred.max())
         if m > 1e-12:
             pred = pred / m

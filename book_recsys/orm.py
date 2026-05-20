@@ -79,3 +79,21 @@ class Friendship(Base):
     user: Mapped[User] = relationship("User", foreign_keys=[user_id], back_populates="friendships_out")
 
     __table_args__ = (UniqueConstraint("user_id", "friend_id", name="uq_friend_pair"),)
+
+
+class FriendRequest(Base):
+    __tablename__ = "friend_requests"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    from_user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    to_user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    status: Mapped[str] = mapped_column(String(16), default="pending", index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, index=True)
+    responded_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+
+    from_user: Mapped[User] = relationship("User", foreign_keys=[from_user_id])
+    to_user: Mapped[User] = relationship("User", foreign_keys=[to_user_id])
+
+    __table_args__ = (
+        UniqueConstraint("from_user_id", "to_user_id", name="uq_friend_request_pair"),
+    )

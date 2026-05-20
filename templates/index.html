@@ -86,9 +86,8 @@
 
     <div id="appWrap">
       <nav class="tabs" role="tablist">
-        <button type="button" class="tab active" data-tab="feed">За теб</button>
+        <button type="button" class="tab active" data-tab="feed">Начало</button>
         <button type="button" class="tab" data-tab="browse">Каталог</button>
-        <button type="button" class="tab" data-tab="popular">Популярни</button>
         <button type="button" class="tab" data-tab="library">Моята библиотека</button>
         <button type="button" class="tab" data-tab="friends">Приятели</button>
         <button type="button" class="tab" data-tab="eval">Оценка</button>
@@ -96,23 +95,40 @@
 
       <main>
         <section id="tab-feed" class="panel active">
-          <div class="panel-head">
-            <h2>Препоръки</h2>
-            <div class="controls">
-              <label class="slider-label">Разнообразие
-                <input type="range" id="diversity" min="0.2" max="0.95" step="0.01" value="0.72" />
-              </label>
-              <button type="button" class="btn primary" id="btnRefreshRec">Обнови препоръките</button>
+          <div class="home-block">
+            <div class="panel-head">
+              <h2>Препоръки за теб</h2>
+              <div class="controls">
+                <button type="button" class="btn primary" id="btnRefreshRec">Обнови</button>
+              </div>
             </div>
+            <div id="recList" class="card-grid"></div>
           </div>
-          <div id="recList" class="card-grid"></div>
+
+          <div class="home-block">
+            <div class="panel-head">
+              <h2>Приятели препоръчват</h2>
+              <div class="controls">
+                <button type="button" class="btn" id="btnRefreshFriendsRec">Обнови</button>
+              </div>
+            </div>
+            <div id="friendsRecList" class="card-grid"></div>
+          </div>
+
+          <div class="home-block">
+            <div class="panel-head">
+              <h2>Популярни сега</h2>
+            </div>
+            <div id="popularList" class="card-grid"></div>
+          </div>
         </section>
 
         <section id="tab-browse" class="panel">
           <div class="panel-head">
-            <h2>Всички книги</h2>
+            <h2>Каталог</h2>
             <input type="search" id="bookFilter" class="search" placeholder="Търси заглавие, автор или жанр…" />
           </div>
+          <p class="hint">Показваме каталога на страници (по 80 книги), за да е бързо. Ползвай търсачката или натисни „Покажи още“.</p>
           <div class="ol-fetch">
             <h3 class="mini-h">Импорт от Open Library</h3>
             <div class="row ol-fetch-row">
@@ -124,11 +140,10 @@
             </div>
           </div>
           <div id="bookList" class="card-grid"></div>
-        </section>
-
-        <section id="tab-popular" class="panel">
-          <div class="panel-head"><h2>Популярни в общността</h2></div>
-          <div id="popularList" class="card-grid"></div>
+          <p id="browseCapHint" class="hint browse-cap-hint hidden" aria-live="polite"></p>
+          <div class="browse-more">
+            <button type="button" class="btn hidden" id="btnLoadMore">Покажи още</button>
+          </div>
         </section>
 
         <section id="tab-library" class="panel">
@@ -143,26 +158,37 @@
         <section id="tab-friends" class="panel">
           <div class="panel-head">
             <h2>Приятели</h2>
-            <div class="row">
-              <input type="text" id="friendName" placeholder="потребителско име" />
-              <button type="button" class="btn" id="btnAddFriend">Добави</button>
-            </div>
+            <input type="search" id="userSearch" class="search" placeholder="Търси потребител…" />
           </div>
+          <p class="hint">Търси потребител и изпрати покана. Когато получиш покана, можеш да я приемеш или откажеш.</p>
+          <div id="userSearchResults" class="user-results"></div>
+
+          <h3 class="mini-h">Входящи покани</h3>
+          <div id="incomingReqs" class="requests"></div>
+
+          <h3 class="mini-h">Изпратени покани</h3>
+          <div id="outgoingReqs" class="requests"></div>
+
+          <h3 class="mini-h">Твои приятели</h3>
           <div id="friendsList" class="chips"></div>
         </section>
 
         <section id="tab-eval" class="panel">
           <div class="panel-head eval-panel-head">
             <h2>Оценка</h2>
-            <label class="eval-k-label">K
-              <select id="evalK" aria-label="K за метриките">
-                <option value="5">5</option>
-                <option value="10" selected>10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-              </select>
-            </label>
+            <div class="controls">
+              <label class="eval-k-label">K
+                <select id="evalK" aria-label="K за метриките">
+                  <option value="5">5</option>
+                  <option value="10" selected>10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+              </label>
+              <button type="button" class="btn primary" id="btnRunEval">Изчисли</button>
+            </div>
           </div>
+          <p class="hint" id="evalNote"></p>
           <div class="table-wrap">
             <table class="eval-table" id="evalTable">
               <thead>
@@ -171,6 +197,10 @@
               <tbody></tbody>
             </table>
           </div>
+          <details class="eval-details">
+            <summary>Методология и ограничения (за отчет)</summary>
+            <div class="eval-details__body" id="evalReport"></div>
+          </details>
         </section>
       </main>
     </div>

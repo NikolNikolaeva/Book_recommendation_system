@@ -30,7 +30,7 @@ class HybridContext:
     internal_user_row: dict[int, int]
     vectorizer: TfidfVectorizer
     tfidf_sparse: object
-    tfidf_mat: np.ndarray
+    tfidf_mat: object
     cf_model: CFModel
     popular: np.ndarray
 
@@ -61,7 +61,6 @@ def build_context(session: Session) -> HybridContext:
     n_users = len(users)
 
     vectorizer, tfidf_sp = build_cbf_matrix(books)
-    tfidf_dense = tfidf_sp.toarray()
 
     rows: list[int] = []
     cols: list[int] = []
@@ -89,7 +88,7 @@ def build_context(session: Session) -> HybridContext:
         internal_user_row=internal_user_row,
         vectorizer=vectorizer,
         tfidf_sparse=tfidf_sp,
-        tfidf_mat=tfidf_dense,
+        tfidf_mat=tfidf_sp,
         cf_model=cf,
         popular=pop,
     )
@@ -184,8 +183,12 @@ def hybrid_scores(
 
 def excluded_book_ids(session: Session, user_id: int) -> set[int]:
     out: set[int] = set()
+    # Не предлагаме книги, които потребителят вече е докоснал (like/rating/to_read/finished/dislike),
+    # за да са препоръките "нови" и по-полезни.
     for it in session.scalars(select(Interaction).where(Interaction.user_id == user_id)):
-        if it.event_type == "dislike":
+        if it.event_type in ("dislike", "like", "to_read", "finished"):
+            out.add(it.book_id)
+        elif it.event_type == "rating" and it.rating is not None:
             out.add(it.book_id)
     return out
 

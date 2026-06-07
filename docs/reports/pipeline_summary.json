@@ -1,0 +1,243 @@
+{
+  "v0": {
+    "tag": "v0",
+    "k": 10,
+    "users_in_fold": 8,
+    "stats": {
+      "books": 154,
+      "users": 8,
+      "interactions": 144,
+      "friendships": 14
+    },
+    "rows": [
+      {
+        "method": "Popular",
+        "method_bg": "Popular",
+        "precision_at_k": 0.0125,
+        "recall_at_k": 0.125,
+        "ndcg_at_k": 0.0394,
+        "overall": 0.059
+      },
+      {
+        "method": "CBF-only",
+        "method_bg": "CBF-only",
+        "precision_at_k": 0.0125,
+        "recall_at_k": 0.125,
+        "ndcg_at_k": 0.0376,
+        "overall": 0.0584
+      },
+      {
+        "method": "CF-only",
+        "method_bg": "CF-only",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "overall": 0.0
+      },
+      {
+        "method": "Hybrid",
+        "method_bg": "Hybrid",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "overall": 0.0
+      },
+      {
+        "method": "Hybrid+Social",
+        "method_bg": "Hybrid+Social",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "overall": 0.0
+      }
+    ],
+    "note": "Leave-last-out по последен положителен сигнал (like/rating≥4/finished) за всеки потребител; CF се тренира без отделените взаимодействия; CBF/hybrid за потребителя без неговия отделен ред."
+  },
+  "v1": {
+    "tag": "v1",
+    "k": 10,
+    "users_in_fold": 8,
+    "stats": {
+      "books": 206,
+      "users": 8,
+      "interactions": 144,
+      "friendships": 30
+    },
+    "rows": [
+      {
+        "method": "Popular",
+        "method_bg": "Popular",
+        "precision_at_k": 0.05,
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.1534,
+        "overall": 0.2345
+      },
+      {
+        "method": "CBF-only",
+        "method_bg": "CBF-only",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "overall": 0.0
+      },
+      {
+        "method": "CF-only",
+        "method_bg": "CF-only",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "overall": 0.0
+      },
+      {
+        "method": "Hybrid",
+        "method_bg": "Hybrid",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "overall": 0.0
+      },
+      {
+        "method": "Hybrid+Social",
+        "method_bg": "Hybrid+Social",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "overall": 0.0
+      }
+    ],
+    "note": "Leave-last-out по последен положителен сигнал (like/rating≥4/finished) за всеки потребител; CF се тренира без отделените взаимодействия; CBF/hybrid за потребителя без неговия отделен ред."
+  },
+  "v2": {
+    "tag": "v2",
+    "k": 10,
+    "users_in_fold": 43,
+    "stats": {
+      "books": 206,
+      "users": 43,
+      "interactions": 693,
+      "friendships": 110
+    },
+    "rows": [
+      {
+        "method": "Popular",
+        "method_bg": "Popular",
+        "precision_at_k": 0.0209,
+        "recall_at_k": 0.2093,
+        "ndcg_at_k": 0.1036,
+        "overall": 0.1113
+      },
+      {
+        "method": "CBF-only",
+        "method_bg": "CBF-only",
+        "precision_at_k": 0.0116,
+        "recall_at_k": 0.1163,
+        "ndcg_at_k": 0.0612,
+        "overall": 0.063
+      },
+      {
+        "method": "CF-only",
+        "method_bg": "CF-only",
+        "precision_at_k": 0.0116,
+        "recall_at_k": 0.1163,
+        "ndcg_at_k": 0.04,
+        "overall": 0.056
+      },
+      {
+        "method": "Hybrid",
+        "method_bg": "Hybrid",
+        "precision_at_k": 0.0093,
+        "recall_at_k": 0.093,
+        "ndcg_at_k": 0.0348,
+        "overall": 0.0457
+      },
+      {
+        "method": "Hybrid+Social",
+        "method_bg": "Hybrid+Social",
+        "precision_at_k": 0.0116,
+        "recall_at_k": 0.1163,
+        "ndcg_at_k": 0.0441,
+        "overall": 0.0573
+      }
+    ],
+    "note": "Leave-last-out по последен положителен сигнал (like/rating≥4/finished) за всеки потребител; CF се тренира без отделените взаимодействия; CBF/hybrid за потребителя без неговия отделен ред."
+  },
+  "v3": {
+    "tag": "v3",
+    "k": 10,
+    "users_in_fold": 63,
+    "stats": {
+      "books": 206,
+      "users": 63,
+      "interactions": 1258,
+      "friendships": 164
+    },
+    "rows": [
+      {
+        "method": "Popular",
+        "method_bg": "Popular",
+        "precision_at_k": 0.0143,
+        "recall_at_k": 0.1429,
+        "ndcg_at_k": 0.0545,
+        "overall": 0.0706
+      },
+      {
+        "method": "CBF-only",
+        "method_bg": "CBF-only",
+        "precision_at_k": 0.019,
+        "recall_at_k": 0.1905,
+        "ndcg_at_k": 0.0741,
+        "overall": 0.0945
+      },
+      {
+        "method": "CF-only",
+        "method_bg": "CF-only",
+        "precision_at_k": 0.0063,
+        "recall_at_k": 0.0635,
+        "ndcg_at_k": 0.0244,
+        "overall": 0.0314
+      },
+      {
+        "method": "Hybrid",
+        "method_bg": "Hybrid",
+        "precision_at_k": 0.0095,
+        "recall_at_k": 0.0952,
+        "ndcg_at_k": 0.0419,
+        "overall": 0.0489
+      },
+      {
+        "method": "Hybrid+Social",
+        "method_bg": "Hybrid+Social",
+        "precision_at_k": 0.0143,
+        "recall_at_k": 0.1429,
+        "ndcg_at_k": 0.0649,
+        "overall": 0.074
+      }
+    ],
+    "note": "Leave-last-out по последен положителен сигнал (like/rating≥4/finished) за всеки потребител; CF се тренира без отделените взаимодействия; CBF/hybrid за потребителя без неговия отделен ред."
+  },
+  "phase_b": {
+    "open_library": {
+      "inserted": 52,
+      "updated": 3,
+      "skipped": 0
+    },
+    "tags_enriched": 135,
+    "friendships_added": 16
+  },
+  "phase_c_wave1": {
+    "users_created": 35,
+    "interactions_created": 549,
+    "interactions_skipped_duplicate": 0,
+    "friendships_created": 80,
+    "dataset_size": 35
+  },
+  "phase_c_wave2": {
+    "users_created": 20,
+    "interactions_created": 565,
+    "interactions_skipped_duplicate": 0,
+    "friendships_created": 54,
+    "new_users_in_wave": 20,
+    "expanded_existing": 35
+  },
+  "pdf": "/Users/gabriela.kosteva/Desktop/Book_recommendation_system/docs/Доклад_Препоръчваща_система.pdf"
+}

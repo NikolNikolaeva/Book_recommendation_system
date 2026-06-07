@@ -11,8 +11,8 @@ from sqlalchemy.orm import Session
 from book_recsys.database import SessionLocal, init_db
 from book_recsys.orm import Book, Interaction, User
 from book_recsys.recommender.cf_model import CFModel, build_user_item_matrix, interaction_weight
-from book_recsys.recommender.hybrid import HybridContext, build_context, hybrid_scores
-from book_recsys.recommender.social import social_scores_vector
+from book_recsys.recommender.hybrid import HybridContext, build_context, rank_books_hybrid
+from book_recsys.tuning import get_tuning
 from book_recsys.schemas import EvaluationReport, EvaluationRow
 
 # Текстови блокове за отчет/демо — съответстват на очакваната структура от курса (проблем, хипотеза, методология).
@@ -203,15 +203,31 @@ def evaluate_session(session: Session, k: int = 10) -> tuple[list[EvalResult], i
             cf_model=cf_model,
             popular=full_ctx.popular,
         )
-        scores_h, _, _, _ = hybrid_scores(session, ctx2, user, omit_interaction_ids={held_iid})
-        order = np.argsort(-scores_h)
-        ranked_ids = [books[i].id for i in order.tolist()]
+        tuning = get_tuning()
+        ranked_ids = rank_books_hybrid(
+            session,
+            ctx2,
+            user,
+            k=n_items,
+            omit_interaction_ids={held_iid},
+            tuning=tuning,
+            use_mmr=True,
+            with_social=False,
+            for_eval=True,
+        )
         results["Hybrid"].append(_precision_recall_ndcg(ranked_ids, positive, k))
 
-        soc = social_scores_vector(session, uid, book_index, n_items)
-        comb = 0.55 * scores_h + 0.45 * soc if float(soc.max()) > 0 else scores_h
-        order = np.argsort(-comb)
-        ranked_ids = [books[i].id for i in order.tolist()]
+        ranked_ids = rank_books_hybrid(
+            session,
+            ctx2,
+            user,
+            k=n_items,
+            omit_interaction_ids={held_iid},
+            tuning=tuning,
+            use_mmr=True,
+            with_social=True,
+            for_eval=True,
+        )
         results["Hybrid+Social"].append(_precision_recall_ndcg(ranked_ids, positive, k))
 
     out: list[EvalResult] = []

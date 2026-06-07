@@ -1,0 +1,4929 @@
+[
+  {
+    "username": "synth_01",
+    "genres": [
+      "история",
+      "криминале"
+    ],
+    "authors": [
+      "orwell",
+      "gaiman",
+      "толкин"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 93,
+        "hour": 9
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 94,
+        "hour": 0
+      },
+      {
+        "book_id": 85,
+        "title": "Sharp Objects",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 95,
+        "hour": 13
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 96,
+        "hour": 3
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 97,
+        "hour": 12
+      },
+      {
+        "book_id": 109,
+        "title": "The Paris Apartment",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 98,
+        "hour": 18
+      },
+      {
+        "book_id": 107,
+        "title": "Verity",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 98,
+        "hour": 18
+      },
+      {
+        "book_id": 50,
+        "title": "Kindred",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 99,
+        "hour": 22
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 100,
+        "hour": 22
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 102,
+        "hour": 4
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 102,
+        "hour": 3
+      },
+      {
+        "book_id": 102,
+        "title": "Me Before You",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 104,
+        "hour": 21
+      },
+      {
+        "book_id": 114,
+        "title": "The Firm",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 105,
+        "hour": 17
+      },
+      {
+        "book_id": 148,
+        "title": "American Gods",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 106,
+        "hour": 17
+      },
+      {
+        "book_id": 112,
+        "title": "The Da Vinci Code",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 107,
+        "hour": 12
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 108,
+        "hour": 8
+      },
+      {
+        "book_id": 150,
+        "title": "Stardust",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 109,
+        "hour": 16
+      },
+      {
+        "book_id": 149,
+        "title": "Neverwhere",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 109,
+        "hour": 8
+      }
+    ]
+  },
+  {
+    "username": "synth_02",
+    "genres": [
+      "young adult",
+      "драма",
+      "криминале",
+      "epic"
+    ],
+    "authors": [
+      "толстой",
+      "orwell"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 78,
+        "hour": 17
+      },
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 80,
+        "hour": 4
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 81,
+        "hour": 22
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 81,
+        "hour": 17
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 83,
+        "hour": 2
+      },
+      {
+        "book_id": 83,
+        "title": "Big Little Lies",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 83,
+        "hour": 4
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 85,
+        "hour": 16
+      },
+      {
+        "book_id": 38,
+        "title": "The Thursday Murder Club",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 85,
+        "hour": 16
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 86,
+        "hour": 12
+      },
+      {
+        "book_id": 43,
+        "title": "Ready Player One",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 88,
+        "hour": 20
+      },
+      {
+        "book_id": 99,
+        "title": "The Outsiders",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 88,
+        "hour": 0
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 90,
+        "hour": 21
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 90,
+        "hour": 15
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 91,
+        "hour": 4
+      },
+      {
+        "book_id": 57,
+        "title": "Red Rising",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 92,
+        "hour": 13
+      },
+      {
+        "book_id": 100,
+        "title": "The Perks of Being a Wallflower",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 94,
+        "hour": 19
+      }
+    ]
+  },
+  {
+    "username": "synth_03",
+    "genres": [
+      "психология",
+      "българска литература"
+    ],
+    "authors": [
+      "толстой"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 40,
+        "hour": 15
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "dislike",
+        "rating": null,
+        "day_offset": 41,
+        "hour": 9
+      },
+      {
+        "book_id": 8,
+        "title": "Малкият принц",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 42,
+        "hour": 16
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 42,
+        "hour": 16
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 43,
+        "hour": 6
+      },
+      {
+        "book_id": 133,
+        "title": "Quiet",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 45,
+        "hour": 20
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 45,
+        "hour": 0
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 46,
+        "hour": 11
+      },
+      {
+        "book_id": 154,
+        "title": "Железният светилник",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 47,
+        "hour": 3
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 49,
+        "hour": 17
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 50,
+        "hour": 18
+      },
+      {
+        "book_id": 17,
+        "title": "The Psychology of Money",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 50,
+        "hour": 8
+      },
+      {
+        "book_id": 153,
+        "title": "Гераците",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 51,
+        "hour": 21
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 52,
+        "hour": 20
+      }
+    ]
+  },
+  {
+    "username": "synth_04",
+    "genres": [
+      "sci-fi",
+      "криминале",
+      "история",
+      "романс"
+    ],
+    "authors": [
+      "gaiman",
+      "толкин",
+      "herbert"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 77,
+        "hour": 21
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 79,
+        "hour": 12
+      },
+      {
+        "book_id": 148,
+        "title": "American Gods",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 79,
+        "hour": 23
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 80,
+        "hour": 9
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 82,
+        "hour": 23
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 82,
+        "hour": 9
+      },
+      {
+        "book_id": 102,
+        "title": "Me Before You",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 83,
+        "hour": 17
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 84,
+        "hour": 23
+      },
+      {
+        "book_id": 54,
+        "title": "Normal People",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 85,
+        "hour": 3
+      },
+      {
+        "book_id": 142,
+        "title": "Recursion",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 87,
+        "hour": 0
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 87,
+        "hour": 11
+      },
+      {
+        "book_id": 144,
+        "title": "Cryptonomicon",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 89,
+        "hour": 7
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 89,
+        "hour": 5
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 91,
+        "hour": 8
+      },
+      {
+        "book_id": 50,
+        "title": "Kindred",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 91,
+        "hour": 8
+      }
+    ]
+  },
+  {
+    "username": "synth_05",
+    "genres": [
+      "young adult",
+      "дистопия",
+      "романс",
+      "история"
+    ],
+    "authors": [
+      "orwell"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 48,
+        "hour": 17
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 49,
+        "hour": 6
+      },
+      {
+        "book_id": 101,
+        "title": "Eleanor & Park",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 50,
+        "hour": 0
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 51,
+        "hour": 1
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 51,
+        "hour": 9
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 53,
+        "hour": 4
+      },
+      {
+        "book_id": 56,
+        "title": "The Song of Achilles",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 53,
+        "hour": 0
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 55,
+        "hour": 18
+      },
+      {
+        "book_id": 54,
+        "title": "Normal People",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 55,
+        "hour": 16
+      },
+      {
+        "book_id": 50,
+        "title": "Kindred",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 57,
+        "hour": 10
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 58,
+        "hour": 1
+      },
+      {
+        "book_id": 31,
+        "title": "Beloved",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 58,
+        "hour": 5
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 60,
+        "hour": 11
+      },
+      {
+        "book_id": 94,
+        "title": "Twilight",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 60,
+        "hour": 19
+      }
+    ]
+  },
+  {
+    "username": "synth_06",
+    "genres": [
+      "young adult",
+      "дистопия",
+      "история",
+      "криминале"
+    ],
+    "authors": [
+      "rowling"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 91,
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 48,
+        "hour": 11
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 50,
+        "hour": 3
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 50,
+        "hour": 11
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 52,
+        "hour": 18
+      },
+      {
+        "book_id": 38,
+        "title": "The Thursday Murder Club",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 52,
+        "hour": 2
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 54,
+        "hour": 21
+      },
+      {
+        "book_id": 54,
+        "title": "Normal People",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 55,
+        "hour": 10
+      },
+      {
+        "book_id": 57,
+        "title": "Red Rising",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 56,
+        "hour": 12
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 56,
+        "hour": 14
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 58,
+        "hour": 11
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 59,
+        "hour": 6
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 59,
+        "hour": 13
+      },
+      {
+        "book_id": 43,
+        "title": "Ready Player One",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 61,
+        "hour": 8
+      },
+      {
+        "book_id": 50,
+        "title": "Kindred",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 61,
+        "hour": 17
+      }
+    ]
+  },
+  {
+    "username": "synth_07",
+    "genres": [
+      "романс",
+      "трилър",
+      "история",
+      "класика"
+    ],
+    "authors": [
+      "king",
+      "толкин",
+      "herbert"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 75,
+        "title": "Little Women",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 100,
+        "hour": 10
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 100,
+        "hour": 21
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 101,
+        "hour": 6
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 103,
+        "hour": 2
+      },
+      {
+        "book_id": 107,
+        "title": "Verity",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 103,
+        "hour": 17
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 104,
+        "hour": 10
+      },
+      {
+        "book_id": 102,
+        "title": "Me Before You",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 105,
+        "hour": 19
+      },
+      {
+        "book_id": 38,
+        "title": "The Thursday Murder Club",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 107,
+        "hour": 2
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 107,
+        "hour": 3
+      },
+      {
+        "book_id": 55,
+        "title": "Conversations with Friends",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 108,
+        "hour": 5
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 109,
+        "hour": 15
+      },
+      {
+        "book_id": 52,
+        "title": "Where the Crawdads Sing",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 111,
+        "hour": 10
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 112,
+        "hour": 8
+      },
+      {
+        "book_id": 54,
+        "title": "Normal People",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 113,
+        "hour": 8
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 113,
+        "hour": 15
+      },
+      {
+        "book_id": 64,
+        "title": "Jane Eyre",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 115,
+        "hour": 6
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 116,
+        "hour": 9
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 117,
+        "hour": 2
+      }
+    ]
+  },
+  {
+    "username": "synth_08",
+    "genres": [
+      "българска литература",
+      "психология",
+      "epic",
+      "криминале"
+    ],
+    "authors": [
+      "толстой",
+      "king",
+      "herbert"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 66,
+        "hour": 4
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 67,
+        "hour": 11
+      },
+      {
+        "book_id": 60,
+        "title": "The Final Empire",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 67,
+        "hour": 4
+      },
+      {
+        "book_id": 108,
+        "title": "The Guest List",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 68,
+        "hour": 23
+      },
+      {
+        "book_id": 109,
+        "title": "The Paris Apartment",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 69,
+        "hour": 21
+      },
+      {
+        "book_id": 17,
+        "title": "The Psychology of Money",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 71,
+        "hour": 5
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 72,
+        "hour": 4
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 72,
+        "hour": 22
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 73,
+        "hour": 13
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 75,
+        "hour": 17
+      },
+      {
+        "book_id": 83,
+        "title": "Big Little Lies",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 76,
+        "hour": 17
+      },
+      {
+        "book_id": 13,
+        "title": "Thinking Fast and Slow",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 77,
+        "hour": 4
+      },
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 77,
+        "hour": 15
+      },
+      {
+        "book_id": 90,
+        "title": "Чичовци",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 79,
+        "hour": 10
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 79,
+        "hour": 2
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 81,
+        "hour": 6
+      },
+      {
+        "book_id": 61,
+        "title": "Mistborn: The Well of Ascension",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 81,
+        "hour": 21
+      },
+      {
+        "book_id": 112,
+        "title": "The Da Vinci Code",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 82,
+        "hour": 17
+      }
+    ]
+  },
+  {
+    "username": "synth_09",
+    "genres": [
+      "българска литература",
+      "дистопия",
+      "young adult"
+    ],
+    "authors": [
+      "rowling",
+      "вазов"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 67,
+        "hour": 11
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 67,
+        "hour": 3
+      },
+      {
+        "book_id": 67,
+        "title": "The Handmaid's Tale",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 69,
+        "hour": 14
+      },
+      {
+        "book_id": 45,
+        "title": "Ender's Game",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 69,
+        "hour": 22
+      },
+      {
+        "book_id": 153,
+        "title": "Гераците",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 71,
+        "hour": 8
+      },
+      {
+        "book_id": 76,
+        "title": "The Book Thief",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 72,
+        "hour": 11
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 72,
+        "hour": 8
+      },
+      {
+        "book_id": 92,
+        "title": "Harry Potter and the Goblet of Fire",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 73,
+        "hour": 2
+      },
+      {
+        "book_id": 96,
+        "title": "Mockingjay",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 75,
+        "hour": 18
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 76,
+        "hour": 19
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 76,
+        "hour": 4
+      },
+      {
+        "book_id": 57,
+        "title": "Red Rising",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 77,
+        "hour": 12
+      },
+      {
+        "book_id": 154,
+        "title": "Железният светилник",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 79,
+        "hour": 0
+      },
+      {
+        "book_id": 129,
+        "title": "The Circle",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 79,
+        "hour": 19
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 81,
+        "hour": 22
+      },
+      {
+        "book_id": 98,
+        "title": "The Maze Runner",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 81,
+        "hour": 10
+      },
+      {
+        "book_id": 94,
+        "title": "Twilight",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 83,
+        "hour": 22
+      }
+    ]
+  },
+  {
+    "username": "synth_10",
+    "genres": [
+      "дистопия",
+      "трилър"
+    ],
+    "authors": [
+      "gaiman",
+      "murakami",
+      "christie"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 206,
+        "title": "The Sittaford Mystery",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 34,
+        "hour": 11
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 35,
+        "hour": 16
+      },
+      {
+        "book_id": 149,
+        "title": "Neverwhere",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 36,
+        "hour": 18
+      },
+      {
+        "book_id": 107,
+        "title": "Verity",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 38,
+        "hour": 3
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 39,
+        "hour": 12
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 39,
+        "hour": 8
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 41,
+        "hour": 11
+      },
+      {
+        "book_id": 44,
+        "title": "The Hunger Games",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 41,
+        "hour": 6
+      },
+      {
+        "book_id": 85,
+        "title": "Sharp Objects",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 42,
+        "hour": 14
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 43,
+        "hour": 11
+      },
+      {
+        "book_id": 84,
+        "title": "The Woman in the Window",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 45,
+        "hour": 16
+      },
+      {
+        "book_id": 108,
+        "title": "The Guest List",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 45,
+        "hour": 6
+      },
+      {
+        "book_id": 109,
+        "title": "The Paris Apartment",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 47,
+        "hour": 1
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 47,
+        "hour": 8
+      }
+    ]
+  },
+  {
+    "username": "synth_11",
+    "genres": [
+      "фентъзи",
+      "романс"
+    ],
+    "authors": [
+      "orwell",
+      "роулинг",
+      "маас"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 71,
+        "hour": 5
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 73,
+        "hour": 12
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 73,
+        "hour": 14
+      },
+      {
+        "book_id": 150,
+        "title": "Stardust",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 74,
+        "hour": 18
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 76,
+        "hour": 22
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 76,
+        "hour": 15
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 77,
+        "hour": 0
+      },
+      {
+        "book_id": 58,
+        "title": "The Fifth Season",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 79,
+        "hour": 20
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 80,
+        "hour": 16
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 80,
+        "hour": 20
+      },
+      {
+        "book_id": 56,
+        "title": "The Song of Achilles",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 81,
+        "hour": 9
+      },
+      {
+        "book_id": 64,
+        "title": "Jane Eyre",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 82,
+        "hour": 9
+      },
+      {
+        "book_id": 27,
+        "title": "Circe",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 83,
+        "hour": 0
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 84,
+        "hour": 22
+      }
+    ]
+  },
+  {
+    "username": "synth_12",
+    "genres": [
+      "нехудожествена",
+      "sci-fi",
+      "трилър"
+    ],
+    "authors": [
+      "маас",
+      "king",
+      "оруел"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 25,
+        "title": "Becoming",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 36,
+        "hour": 23
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 37,
+        "hour": 23
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 38,
+        "hour": 9
+      },
+      {
+        "book_id": 45,
+        "title": "Ender's Game",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 38,
+        "hour": 19
+      },
+      {
+        "book_id": 17,
+        "title": "The Psychology of Money",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 39,
+        "hour": 6
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 41,
+        "hour": 7
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 41,
+        "hour": 3
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 43,
+        "hour": 20
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 43,
+        "hour": 19
+      },
+      {
+        "book_id": 47,
+        "title": "Neuromancer",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 45,
+        "hour": 22
+      },
+      {
+        "book_id": 13,
+        "title": "Thinking Fast and Slow",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 46,
+        "hour": 7
+      },
+      {
+        "book_id": 6,
+        "title": "Atomic Habits",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 46,
+        "hour": 9
+      },
+      {
+        "book_id": 44,
+        "title": "The Hunger Games",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 47,
+        "hour": 14
+      },
+      {
+        "book_id": 39,
+        "title": "Station Eleven",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 48,
+        "hour": 19
+      },
+      {
+        "book_id": 35,
+        "title": "Braiding Sweetgrass",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 50,
+        "hour": 17
+      },
+      {
+        "book_id": 20,
+        "title": "The Three-Body Problem",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 51,
+        "hour": 21
+      },
+      {
+        "book_id": 42,
+        "title": "The Martian",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 52,
+        "hour": 11
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 52,
+        "hour": 13
+      }
+    ]
+  },
+  {
+    "username": "synth_13",
+    "genres": [
+      "дистопия",
+      "драма",
+      "нехудожествена",
+      "история"
+    ],
+    "authors": [
+      "толстой"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 131,
+        "title": "The Emperor of All Maladies",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 81,
+        "hour": 13
+      },
+      {
+        "book_id": 54,
+        "title": "Normal People",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 82,
+        "hour": 3
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 83,
+        "hour": 14
+      },
+      {
+        "book_id": 35,
+        "title": "Braiding Sweetgrass",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 84,
+        "hour": 20
+      },
+      {
+        "book_id": 83,
+        "title": "Big Little Lies",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 86,
+        "hour": 10
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 86,
+        "hour": 2
+      },
+      {
+        "book_id": 73,
+        "title": "It Ends with Us",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 87,
+        "hour": 14
+      },
+      {
+        "book_id": 21,
+        "title": "Educated",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 88,
+        "hour": 17
+      },
+      {
+        "book_id": 17,
+        "title": "The Psychology of Money",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 89,
+        "hour": 2
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 90,
+        "hour": 14
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 92,
+        "hour": 15
+      },
+      {
+        "book_id": 72,
+        "title": "The Beekeeper of Aleppo",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 92,
+        "hour": 1
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 94,
+        "hour": 20
+      },
+      {
+        "book_id": 68,
+        "title": "Fahrenheit 451",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 94,
+        "hour": 13
+      },
+      {
+        "book_id": 13,
+        "title": "Thinking Fast and Slow",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 95,
+        "hour": 4
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 97,
+        "hour": 8
+      },
+      {
+        "book_id": 50,
+        "title": "Kindred",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 97,
+        "hour": 22
+      }
+    ]
+  },
+  {
+    "username": "synth_14",
+    "genres": [
+      "история",
+      "магия"
+    ],
+    "authors": [
+      "austen"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 21,
+        "hour": 8
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 21,
+        "hour": 0
+      },
+      {
+        "book_id": 59,
+        "title": "The Poppy War",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 23,
+        "hour": 22
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 23,
+        "hour": 21
+      },
+      {
+        "book_id": 58,
+        "title": "The Fifth Season",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 25,
+        "hour": 19
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 26,
+        "hour": 21
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 27,
+        "hour": 21
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 28,
+        "hour": 18
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 28,
+        "hour": 11
+      },
+      {
+        "book_id": 50,
+        "title": "Kindred",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 30,
+        "hour": 8
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 31,
+        "hour": 14
+      },
+      {
+        "book_id": 31,
+        "title": "Beloved",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 32,
+        "hour": 17
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 32,
+        "hour": 10
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 34,
+        "hour": 9
+      }
+    ]
+  },
+  {
+    "username": "synth_15",
+    "genres": [
+      "романс",
+      "фентъзи",
+      "трилър",
+      "магия"
+    ],
+    "authors": [
+      "толкин"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 93,
+        "title": "The Lightning Thief",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 72,
+        "hour": 13
+      },
+      {
+        "book_id": 27,
+        "title": "Circe",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 73,
+        "hour": 6
+      },
+      {
+        "book_id": 58,
+        "title": "The Fifth Season",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 73,
+        "hour": 8
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 74,
+        "hour": 19
+      },
+      {
+        "book_id": 149,
+        "title": "Neverwhere",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 75,
+        "hour": 2
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 77,
+        "hour": 15
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 77,
+        "hour": 0
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 78,
+        "hour": 13
+      },
+      {
+        "book_id": 61,
+        "title": "Mistborn: The Well of Ascension",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 80,
+        "hour": 16
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 80,
+        "hour": 10
+      },
+      {
+        "book_id": 59,
+        "title": "The Poppy War",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 82,
+        "hour": 0
+      },
+      {
+        "book_id": 92,
+        "title": "Harry Potter and the Goblet of Fire",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 83,
+        "hour": 2
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 83,
+        "hour": 0
+      },
+      {
+        "book_id": 86,
+        "title": "The Last Wish",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 84,
+        "hour": 8
+      },
+      {
+        "book_id": 150,
+        "title": "Stardust",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 85,
+        "hour": 10
+      }
+    ]
+  },
+  {
+    "username": "synth_16",
+    "genres": [
+      "sci-fi",
+      "романс",
+      "криминале"
+    ],
+    "authors": [
+      "толкин",
+      "gaiman",
+      "толстой"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 20,
+        "title": "The Three-Body Problem",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 68,
+        "hour": 23
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 69,
+        "hour": 9
+      },
+      {
+        "book_id": 19,
+        "title": "Klara and the Sun",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 70,
+        "hour": 6
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 72,
+        "hour": 2
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 73,
+        "hour": 9
+      },
+      {
+        "book_id": 150,
+        "title": "Stardust",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 73,
+        "hour": 2
+      },
+      {
+        "book_id": 43,
+        "title": "Ready Player One",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 74,
+        "hour": 20
+      },
+      {
+        "book_id": 39,
+        "title": "Station Eleven",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 75,
+        "hour": 10
+      },
+      {
+        "book_id": 103,
+        "title": "The Time Traveler's Wife",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 77,
+        "hour": 3
+      },
+      {
+        "book_id": 12,
+        "title": "Project Hail Mary",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 78,
+        "hour": 21
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 78,
+        "hour": 1
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 80,
+        "hour": 21
+      },
+      {
+        "book_id": 148,
+        "title": "American Gods",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 81,
+        "hour": 1
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 82,
+        "hour": 11
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 83,
+        "hour": 12
+      }
+    ]
+  },
+  {
+    "username": "synth_17",
+    "genres": [
+      "epic",
+      "магия",
+      "sci-fi",
+      "психология"
+    ],
+    "authors": [
+      "murakami",
+      "king",
+      "gaiman"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 149,
+        "title": "Neverwhere",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 44,
+        "hour": 6
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 46,
+        "hour": 5
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 47,
+        "hour": 13
+      },
+      {
+        "book_id": 27,
+        "title": "Circe",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 47,
+        "hour": 2
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 49,
+        "hour": 6
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 50,
+        "hour": 8
+      },
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 50,
+        "hour": 23
+      },
+      {
+        "book_id": 58,
+        "title": "The Fifth Season",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 52,
+        "hour": 17
+      },
+      {
+        "book_id": 39,
+        "title": "Station Eleven",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 53,
+        "hour": 5
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 53,
+        "hour": 9
+      },
+      {
+        "book_id": 60,
+        "title": "The Final Empire",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 55,
+        "hour": 14
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 56,
+        "hour": 22
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 57,
+        "hour": 10
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 57,
+        "hour": 12
+      },
+      {
+        "book_id": 20,
+        "title": "The Three-Body Problem",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 59,
+        "hour": 13
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 60,
+        "hour": 3
+      },
+      {
+        "book_id": 12,
+        "title": "Project Hail Mary",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 60,
+        "hour": 7
+      }
+    ]
+  },
+  {
+    "username": "synth_18",
+    "genres": [
+      "магия",
+      "нехудожествена",
+      "история"
+    ],
+    "authors": [
+      "herbert"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 56,
+        "title": "The Song of Achilles",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 3,
+        "hour": 20
+      },
+      {
+        "book_id": 13,
+        "title": "Thinking Fast and Slow",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 3,
+        "hour": 0
+      },
+      {
+        "book_id": 54,
+        "title": "Normal People",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 4,
+        "hour": 14
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 5,
+        "hour": 15
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 7,
+        "hour": 14
+      },
+      {
+        "book_id": 17,
+        "title": "The Psychology of Money",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 8,
+        "hour": 14
+      },
+      {
+        "book_id": 131,
+        "title": "The Emperor of All Maladies",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 8,
+        "hour": 13
+      },
+      {
+        "book_id": 50,
+        "title": "Kindred",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 9,
+        "hour": 3
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 10,
+        "hour": 2
+      },
+      {
+        "book_id": 35,
+        "title": "Braiding Sweetgrass",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 11,
+        "hour": 1
+      },
+      {
+        "book_id": 27,
+        "title": "Circe",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 12,
+        "hour": 0
+      },
+      {
+        "book_id": 58,
+        "title": "The Fifth Season",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 14,
+        "hour": 6
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 15,
+        "hour": 15
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 15,
+        "hour": 18
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 16,
+        "hour": 13
+      },
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 17,
+        "hour": 4
+      }
+    ]
+  },
+  {
+    "username": "synth_19",
+    "genres": [
+      "epic",
+      "магия",
+      "young adult",
+      "драма"
+    ],
+    "authors": [
+      "gaiman"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 38,
+        "hour": 15
+      },
+      {
+        "book_id": 31,
+        "title": "Beloved",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 39,
+        "hour": 1
+      },
+      {
+        "book_id": 150,
+        "title": "Stardust",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 39,
+        "hour": 10
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 40,
+        "hour": 10
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 41,
+        "hour": 8
+      },
+      {
+        "book_id": 60,
+        "title": "The Final Empire",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 42,
+        "hour": 4
+      },
+      {
+        "book_id": 91,
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 43,
+        "hour": 12
+      },
+      {
+        "book_id": 26,
+        "title": "The Road",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 45,
+        "hour": 12
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 45,
+        "hour": 18
+      },
+      {
+        "book_id": 148,
+        "title": "American Gods",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 46,
+        "hour": 0
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 47,
+        "hour": 22
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 48,
+        "hour": 20
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 49,
+        "hour": 12
+      },
+      {
+        "book_id": 61,
+        "title": "Mistborn: The Well of Ascension",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 51,
+        "hour": 22
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 52,
+        "hour": 1
+      },
+      {
+        "book_id": 92,
+        "title": "Harry Potter and the Goblet of Fire",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 52,
+        "hour": 17
+      },
+      {
+        "book_id": 99,
+        "title": "The Outsiders",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 54,
+        "hour": 0
+      }
+    ]
+  },
+  {
+    "username": "synth_20",
+    "genres": [
+      "sci-fi",
+      "история",
+      "драма"
+    ],
+    "authors": [
+      "murakami",
+      "толстой"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 23,
+        "hour": 12
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 23,
+        "hour": 4
+      },
+      {
+        "book_id": 26,
+        "title": "The Road",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 25,
+        "hour": 19
+      },
+      {
+        "book_id": 50,
+        "title": "Kindred",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 25,
+        "hour": 4
+      },
+      {
+        "book_id": 42,
+        "title": "The Martian",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 27,
+        "hour": 10
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 27,
+        "hour": 23
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 28,
+        "hour": 23
+      },
+      {
+        "book_id": 31,
+        "title": "Beloved",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 29,
+        "hour": 13
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 31,
+        "hour": 2
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 32,
+        "hour": 2
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 33,
+        "hour": 7
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 34,
+        "hour": 10
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 34,
+        "hour": 19
+      },
+      {
+        "book_id": 45,
+        "title": "Ender's Game",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 35,
+        "hour": 3
+      }
+    ]
+  },
+  {
+    "username": "synth_21",
+    "genres": [
+      "романс",
+      "трилър",
+      "sci-fi"
+    ],
+    "authors": [
+      "толкин",
+      "роулинг"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 20,
+        "title": "The Three-Body Problem",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 27,
+        "hour": 7
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 28,
+        "hour": 23
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 29,
+        "hour": 5
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 31,
+        "hour": 6
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 32,
+        "hour": 15
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 33,
+        "hour": 22
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 33,
+        "hour": 9
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 35,
+        "hour": 9
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 36,
+        "hour": 4
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 36,
+        "hour": 20
+      },
+      {
+        "book_id": 12,
+        "title": "Project Hail Mary",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 38,
+        "hour": 9
+      },
+      {
+        "book_id": 107,
+        "title": "Verity",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 39,
+        "hour": 12
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 40,
+        "hour": 2
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 40,
+        "hour": 21
+      }
+    ]
+  },
+  {
+    "username": "synth_22",
+    "genres": [
+      "история",
+      "фентъзи",
+      "романс"
+    ],
+    "authors": [
+      "austen",
+      "christie",
+      "маас"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 27,
+        "title": "Circe",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 22,
+        "hour": 4
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 23,
+        "hour": 15
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 25,
+        "hour": 11
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 25,
+        "hour": 15
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 26,
+        "hour": 1
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 27,
+        "hour": 18
+      },
+      {
+        "book_id": 54,
+        "title": "Normal People",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 28,
+        "hour": 1
+      },
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 30,
+        "hour": 13
+      },
+      {
+        "book_id": 206,
+        "title": "The Sittaford Mystery",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 30,
+        "hour": 23
+      },
+      {
+        "book_id": 56,
+        "title": "The Song of Achilles",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 32,
+        "hour": 2
+      },
+      {
+        "book_id": 31,
+        "title": "Beloved",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 33,
+        "hour": 13
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 33,
+        "hour": 5
+      },
+      {
+        "book_id": 197,
+        "title": "A Caribbean Mystery",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 34,
+        "hour": 0
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 35,
+        "hour": 20
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 36,
+        "hour": 19
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 38,
+        "hour": 5
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 38,
+        "hour": 22
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 39,
+        "hour": 8
+      }
+    ]
+  },
+  {
+    "username": "synth_23",
+    "genres": [
+      "трилър",
+      "sci-fi",
+      "young adult"
+    ],
+    "authors": [
+      "herbert",
+      "austen"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 27,
+        "hour": 22
+      },
+      {
+        "book_id": 142,
+        "title": "Recursion",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 28,
+        "hour": 18
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 29,
+        "hour": 2
+      },
+      {
+        "book_id": 97,
+        "title": "Divergent",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 29,
+        "hour": 5
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 31,
+        "hour": 2
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 31,
+        "hour": 21
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 33,
+        "hour": 4
+      },
+      {
+        "book_id": 12,
+        "title": "Project Hail Mary",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 33,
+        "hour": 15
+      },
+      {
+        "book_id": 39,
+        "title": "Station Eleven",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 35,
+        "hour": 15
+      },
+      {
+        "book_id": 96,
+        "title": "Mockingjay",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 35,
+        "hour": 15
+      },
+      {
+        "book_id": 20,
+        "title": "The Three-Body Problem",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 36,
+        "hour": 9
+      },
+      {
+        "book_id": 45,
+        "title": "Ender's Game",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 38,
+        "hour": 1
+      },
+      {
+        "book_id": 38,
+        "title": "The Thursday Murder Club",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 39,
+        "hour": 10
+      },
+      {
+        "book_id": 19,
+        "title": "Klara and the Sun",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 39,
+        "hour": 9
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 41,
+        "hour": 13
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 42,
+        "hour": 11
+      }
+    ]
+  },
+  {
+    "username": "synth_24",
+    "genres": [
+      "криминале",
+      "романс",
+      "история",
+      "българска литература"
+    ],
+    "authors": [
+      "роулинг"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 8,
+        "hour": 3
+      },
+      {
+        "book_id": 54,
+        "title": "Normal People",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 10,
+        "hour": 22
+      },
+      {
+        "book_id": 52,
+        "title": "Where the Crawdads Sing",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 11,
+        "hour": 9
+      },
+      {
+        "book_id": 64,
+        "title": "Jane Eyre",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 12,
+        "hour": 3
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 13,
+        "hour": 23
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 13,
+        "hour": 2
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 15,
+        "hour": 18
+      },
+      {
+        "book_id": 73,
+        "title": "It Ends with Us",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 15,
+        "hour": 20
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 16,
+        "hour": 9
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 18,
+        "hour": 7
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 18,
+        "hour": 7
+      },
+      {
+        "book_id": 56,
+        "title": "The Song of Achilles",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 19,
+        "hour": 6
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 21,
+        "hour": 18
+      },
+      {
+        "book_id": 38,
+        "title": "The Thursday Murder Club",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 21,
+        "hour": 13
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 23,
+        "hour": 4
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 23,
+        "hour": 10
+      }
+    ]
+  },
+  {
+    "username": "synth_25",
+    "genres": [
+      "романс",
+      "нехудожествена",
+      "криминале",
+      "фентъзи"
+    ],
+    "authors": [
+      "austen",
+      "christie",
+      "gaiman"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 206,
+        "title": "The Sittaford Mystery",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 74,
+        "hour": 13
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 75,
+        "hour": 20
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 76,
+        "hour": 7
+      },
+      {
+        "book_id": 192,
+        "title": "The Mysterious Affair at Styles",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 77,
+        "hour": 8
+      },
+      {
+        "book_id": 6,
+        "title": "Atomic Habits",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 79,
+        "hour": 14
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 80,
+        "hour": 6
+      },
+      {
+        "book_id": 56,
+        "title": "The Song of Achilles",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 81,
+        "hour": 20
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 81,
+        "hour": 9
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 83,
+        "hour": 2
+      },
+      {
+        "book_id": 17,
+        "title": "The Psychology of Money",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 83,
+        "hour": 7
+      },
+      {
+        "book_id": 13,
+        "title": "Thinking Fast and Slow",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 85,
+        "hour": 1
+      },
+      {
+        "book_id": 150,
+        "title": "Stardust",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 86,
+        "hour": 13
+      },
+      {
+        "book_id": 25,
+        "title": "Becoming",
+        "event_type": "dislike",
+        "rating": null,
+        "day_offset": 86,
+        "hour": 8
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 88,
+        "hour": 8
+      },
+      {
+        "book_id": 198,
+        "title": "The Mystery of the Blue Train",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 88,
+        "hour": 16
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 90,
+        "hour": 12
+      }
+    ]
+  },
+  {
+    "username": "synth_26",
+    "genres": [
+      "криминале",
+      "sci-fi",
+      "young adult"
+    ],
+    "authors": [
+      "rowling"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 74,
+        "hour": 21
+      },
+      {
+        "book_id": 19,
+        "title": "Klara and the Sun",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 75,
+        "hour": 10
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 76,
+        "hour": 13
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 77,
+        "hour": 20
+      },
+      {
+        "book_id": 98,
+        "title": "The Maze Runner",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 78,
+        "hour": 15
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 79,
+        "hour": 16
+      },
+      {
+        "book_id": 45,
+        "title": "Ender's Game",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 79,
+        "hour": 12
+      },
+      {
+        "book_id": 91,
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 81,
+        "hour": 16
+      },
+      {
+        "book_id": 42,
+        "title": "The Martian",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 82,
+        "hour": 14
+      },
+      {
+        "book_id": 57,
+        "title": "Red Rising",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 82,
+        "hour": 13
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 83,
+        "hour": 6
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 84,
+        "hour": 14
+      },
+      {
+        "book_id": 20,
+        "title": "The Three-Body Problem",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 85,
+        "hour": 6
+      },
+      {
+        "book_id": 39,
+        "title": "Station Eleven",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 86,
+        "hour": 10
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 88,
+        "hour": 15
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 89,
+        "hour": 22
+      },
+      {
+        "book_id": 12,
+        "title": "Project Hail Mary",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 89,
+        "hour": 0
+      }
+    ]
+  },
+  {
+    "username": "synth_27",
+    "genres": [
+      "epic",
+      "дистопия"
+    ],
+    "authors": [
+      "murakami",
+      "larsson",
+      "оруел"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 62,
+        "hour": 15
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 62,
+        "hour": 4
+      },
+      {
+        "book_id": 12,
+        "title": "Project Hail Mary",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 64,
+        "hour": 11
+      },
+      {
+        "book_id": 67,
+        "title": "The Handmaid's Tale",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 65,
+        "hour": 15
+      },
+      {
+        "book_id": 6,
+        "title": "Atomic Habits",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 66,
+        "hour": 8
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 66,
+        "hour": 9
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 68,
+        "hour": 8
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 68,
+        "hour": 3
+      },
+      {
+        "book_id": 8,
+        "title": "Малкият принц",
+        "event_type": "dislike",
+        "rating": null,
+        "day_offset": 69,
+        "hour": 6
+      },
+      {
+        "book_id": 60,
+        "title": "The Final Empire",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 70,
+        "hour": 16
+      },
+      {
+        "book_id": 80,
+        "title": "Shōgun",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 71,
+        "hour": 20
+      },
+      {
+        "book_id": 68,
+        "title": "Fahrenheit 451",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 73,
+        "hour": 15
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 74,
+        "hour": 2
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 75,
+        "hour": 12
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 75,
+        "hour": 4
+      }
+    ]
+  },
+  {
+    "username": "synth_28",
+    "genres": [
+      "българска литература",
+      "класика",
+      "фентъзи"
+    ],
+    "authors": [
+      "rowling",
+      "herbert",
+      "orwell"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 54,
+        "hour": 1
+      },
+      {
+        "book_id": 153,
+        "title": "Гераците",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 55,
+        "hour": 14
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 57,
+        "hour": 11
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 57,
+        "hour": 22
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 58,
+        "hour": 1
+      },
+      {
+        "book_id": 27,
+        "title": "Circe",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 60,
+        "hour": 22
+      },
+      {
+        "book_id": 58,
+        "title": "The Fifth Season",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 60,
+        "hour": 16
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 61,
+        "hour": 7
+      },
+      {
+        "book_id": 91,
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 62,
+        "hour": 0
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 63,
+        "hour": 22
+      },
+      {
+        "book_id": 60,
+        "title": "The Final Empire",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 64,
+        "hour": 4
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 65,
+        "hour": 10
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 67,
+        "hour": 9
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 68,
+        "hour": 21
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 69,
+        "hour": 23
+      },
+      {
+        "book_id": 62,
+        "title": "The Lies of Locke Lamora",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 69,
+        "hour": 23
+      },
+      {
+        "book_id": 154,
+        "title": "Железният светилник",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 70,
+        "hour": 19
+      }
+    ]
+  },
+  {
+    "username": "synth_29",
+    "genres": [
+      "sci-fi",
+      "young adult",
+      "фентъзи",
+      "българска литература"
+    ],
+    "authors": [
+      "rowling"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 98,
+        "title": "The Maze Runner",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 51,
+        "hour": 10
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 52,
+        "hour": 14
+      },
+      {
+        "book_id": 58,
+        "title": "The Fifth Season",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 53,
+        "hour": 0
+      },
+      {
+        "book_id": 91,
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 54,
+        "hour": 17
+      },
+      {
+        "book_id": 57,
+        "title": "Red Rising",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 55,
+        "hour": 14
+      },
+      {
+        "book_id": 92,
+        "title": "Harry Potter and the Goblet of Fire",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 56,
+        "hour": 13
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 57,
+        "hour": 15
+      },
+      {
+        "book_id": 19,
+        "title": "Klara and the Sun",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 58,
+        "hour": 13
+      },
+      {
+        "book_id": 95,
+        "title": "The Hunger Games: Catching Fire",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 59,
+        "hour": 8
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 60,
+        "hour": 15
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 61,
+        "hour": 5
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 62,
+        "hour": 10
+      },
+      {
+        "book_id": 45,
+        "title": "Ender's Game",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 64,
+        "hour": 15
+      },
+      {
+        "book_id": 27,
+        "title": "Circe",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 65,
+        "hour": 21
+      }
+    ]
+  },
+  {
+    "username": "synth_30",
+    "genres": [
+      "дистопия",
+      "фентъзи"
+    ],
+    "authors": [
+      "толстой",
+      "orwell"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 51,
+        "hour": 12
+      },
+      {
+        "book_id": 63,
+        "title": "The Blade Itself",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 52,
+        "hour": 19
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 52,
+        "hour": 15
+      },
+      {
+        "book_id": 67,
+        "title": "The Handmaid's Tale",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 53,
+        "hour": 14
+      },
+      {
+        "book_id": 44,
+        "title": "The Hunger Games",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 55,
+        "hour": 22
+      },
+      {
+        "book_id": 86,
+        "title": "The Last Wish",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 55,
+        "hour": 6
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 57,
+        "hour": 22
+      },
+      {
+        "book_id": 56,
+        "title": "The Song of Achilles",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 57,
+        "hour": 13
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 58,
+        "hour": 14
+      },
+      {
+        "book_id": 5,
+        "title": "The Name of the Wind",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 60,
+        "hour": 8
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 61,
+        "hour": 15
+      },
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 61,
+        "hour": 20
+      },
+      {
+        "book_id": 59,
+        "title": "The Poppy War",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 62,
+        "hour": 13
+      },
+      {
+        "book_id": 58,
+        "title": "The Fifth Season",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 63,
+        "hour": 0
+      }
+    ]
+  },
+  {
+    "username": "synth_31",
+    "genres": [
+      "романс",
+      "дистопия",
+      "sci-fi"
+    ],
+    "authors": [
+      "murakami",
+      "толкин",
+      "gaiman"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 83,
+        "hour": 7
+      },
+      {
+        "book_id": 45,
+        "title": "Ender's Game",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 84,
+        "hour": 11
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 85,
+        "hour": 21
+      },
+      {
+        "book_id": 43,
+        "title": "Ready Player One",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 86,
+        "hour": 23
+      },
+      {
+        "book_id": 12,
+        "title": "Project Hail Mary",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 86,
+        "hour": 14
+      },
+      {
+        "book_id": 67,
+        "title": "The Handmaid's Tale",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 88,
+        "hour": 1
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 88,
+        "hour": 21
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 89,
+        "hour": 14
+      },
+      {
+        "book_id": 129,
+        "title": "The Circle",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 90,
+        "hour": 13
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 92,
+        "hour": 12
+      },
+      {
+        "book_id": 39,
+        "title": "Station Eleven",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 92,
+        "hour": 12
+      },
+      {
+        "book_id": 48,
+        "title": "Snow Crash",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 94,
+        "hour": 6
+      },
+      {
+        "book_id": 42,
+        "title": "The Martian",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 94,
+        "hour": 18
+      },
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 96,
+        "hour": 0
+      },
+      {
+        "book_id": 20,
+        "title": "The Three-Body Problem",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 96,
+        "hour": 23
+      }
+    ]
+  },
+  {
+    "username": "synth_32",
+    "genres": [
+      "нехудожествена",
+      "българска литература",
+      "young adult"
+    ],
+    "authors": [
+      "larsson",
+      "austen"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 1,
+        "hour": 18
+      },
+      {
+        "book_id": 45,
+        "title": "Ender's Game",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 3,
+        "hour": 13
+      },
+      {
+        "book_id": 6,
+        "title": "Atomic Habits",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 4,
+        "hour": 10
+      },
+      {
+        "book_id": 44,
+        "title": "The Hunger Games",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 4,
+        "hour": 9
+      },
+      {
+        "book_id": 92,
+        "title": "Harry Potter and the Goblet of Fire",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 6,
+        "hour": 13
+      },
+      {
+        "book_id": 93,
+        "title": "The Lightning Thief",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 7,
+        "hour": 10
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 8,
+        "hour": 22
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 8,
+        "hour": 21
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 9,
+        "hour": 9
+      },
+      {
+        "book_id": 43,
+        "title": "Ready Player One",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 10,
+        "hour": 21
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 11,
+        "hour": 14
+      },
+      {
+        "book_id": 1,
+        "title": "Под игото",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 13,
+        "hour": 9
+      },
+      {
+        "book_id": 90,
+        "title": "Чичовци",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 14,
+        "hour": 18
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 14,
+        "hour": 17
+      },
+      {
+        "book_id": 13,
+        "title": "Thinking Fast and Slow",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 16,
+        "hour": 22
+      }
+    ]
+  },
+  {
+    "username": "synth_33",
+    "genres": [
+      "класика",
+      "драма",
+      "epic"
+    ],
+    "authors": [
+      "christie",
+      "роулинг",
+      "orwell"
+    ],
+    "language": "en",
+    "interactions": [
+      {
+        "book_id": 3,
+        "title": "1984",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 2,
+        "hour": 10
+      },
+      {
+        "book_id": 37,
+        "title": "The Priory of the Orange Tree",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 4,
+        "hour": 11
+      },
+      {
+        "book_id": 34,
+        "title": "The Seven Husbands of Evelyn Hugo",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 4,
+        "hour": 5
+      },
+      {
+        "book_id": 60,
+        "title": "The Final Empire",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 6,
+        "hour": 11
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 7,
+        "hour": 17
+      },
+      {
+        "book_id": 2,
+        "title": "Хари Потър и Философският камък",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 7,
+        "hour": 16
+      },
+      {
+        "book_id": 15,
+        "title": "The Hobbit",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 8,
+        "hour": 4
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 9,
+        "hour": 1
+      },
+      {
+        "book_id": 123,
+        "title": "Les Misérables",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 11,
+        "hour": 15
+      },
+      {
+        "book_id": 30,
+        "title": "Norwegian Wood",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 11,
+        "hour": 7
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 13,
+        "hour": 5
+      },
+      {
+        "book_id": 32,
+        "title": "The Nightingale",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 14,
+        "hour": 20
+      },
+      {
+        "book_id": 10,
+        "title": "Pride and Prejudice",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 15,
+        "hour": 11
+      },
+      {
+        "book_id": 197,
+        "title": "A Caribbean Mystery",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 15,
+        "hour": 12
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 17,
+        "hour": 9
+      }
+    ]
+  },
+  {
+    "username": "synth_34",
+    "genres": [
+      "трилър",
+      "young adult"
+    ],
+    "authors": [
+      "king",
+      "gaiman"
+    ],
+    "language": "bg",
+    "interactions": [
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 4.5,
+        "day_offset": 12,
+        "hour": 2
+      },
+      {
+        "book_id": 16,
+        "title": "Gone Girl",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 13,
+        "hour": 22
+      },
+      {
+        "book_id": 57,
+        "title": "Red Rising",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 13,
+        "hour": 21
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 14,
+        "hour": 3
+      },
+      {
+        "book_id": 11,
+        "title": "Стъкленият трон",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 16,
+        "hour": 21
+      },
+      {
+        "book_id": 84,
+        "title": "The Woman in the Window",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 16,
+        "hour": 6
+      },
+      {
+        "book_id": 43,
+        "title": "Ready Player One",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 17,
+        "hour": 20
+      },
+      {
+        "book_id": 91,
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 18,
+        "hour": 6
+      },
+      {
+        "book_id": 44,
+        "title": "The Hunger Games",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 20,
+        "hour": 3
+      },
+      {
+        "book_id": 18,
+        "title": "Dark Matter",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 21,
+        "hour": 23
+      },
+      {
+        "book_id": 23,
+        "title": "A Court of Thorns and Roses",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 22,
+        "hour": 9
+      },
+      {
+        "book_id": 85,
+        "title": "Sharp Objects",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 23,
+        "hour": 7
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 24,
+        "hour": 23
+      },
+      {
+        "book_id": 33,
+        "title": "Good Omens",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 24,
+        "hour": 0
+      }
+    ]
+  },
+  {
+    "username": "synth_35",
+    "genres": [
+      "epic",
+      "трилър",
+      "българска литература",
+      "история"
+    ],
+    "authors": [
+      "rowling",
+      "king"
+    ],
+    "language": "both",
+    "interactions": [
+      {
+        "book_id": 85,
+        "title": "Sharp Objects",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 91,
+        "hour": 14
+      },
+      {
+        "book_id": 28,
+        "title": "Тютюн",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 91,
+        "hour": 2
+      },
+      {
+        "book_id": 130,
+        "title": "The Poisonwood Bible",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 92,
+        "hour": 12
+      },
+      {
+        "book_id": 40,
+        "title": "The Fellowship of the Ring",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 94,
+        "hour": 11
+      },
+      {
+        "book_id": 14,
+        "title": "Война и мир",
+        "event_type": "like",
+        "rating": null,
+        "day_offset": 95,
+        "hour": 20
+      },
+      {
+        "book_id": 4,
+        "title": "Dune",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 95,
+        "hour": 16
+      },
+      {
+        "book_id": 31,
+        "title": "Beloved",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 96,
+        "hour": 19
+      },
+      {
+        "book_id": 41,
+        "title": "Harry Potter and the Chamber of Secrets",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 98,
+        "hour": 7
+      },
+      {
+        "book_id": 7,
+        "title": "Sapiens",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 99,
+        "hour": 19
+      },
+      {
+        "book_id": 9,
+        "title": "The Murder of Roger Ackroyd",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 99,
+        "hour": 18
+      },
+      {
+        "book_id": 60,
+        "title": "The Final Empire",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 101,
+        "hour": 15
+      },
+      {
+        "book_id": 22,
+        "title": "The Silent Patient",
+        "event_type": "to_read",
+        "rating": null,
+        "day_offset": 101,
+        "hour": 1
+      },
+      {
+        "book_id": 24,
+        "title": "The Girl with the Dragon Tattoo",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 102,
+        "hour": 9
+      },
+      {
+        "book_id": 46,
+        "title": "Foundation",
+        "event_type": "finished",
+        "rating": null,
+        "day_offset": 103,
+        "hour": 16
+      },
+      {
+        "book_id": 84,
+        "title": "The Woman in the Window",
+        "event_type": "rating",
+        "rating": 5.0,
+        "day_offset": 104,
+        "hour": 10
+      },
+      {
+        "book_id": 29,
+        "title": "Sapiens BG",
+        "event_type": "rating",
+        "rating": 3.0,
+        "day_offset": 105,
+        "hour": 18
+      },
+      {
+        "book_id": 80,
+        "title": "Shōgun",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 106,
+        "hour": 1
+      },
+      {
+        "book_id": 92,
+        "title": "Harry Potter and the Goblet of Fire",
+        "event_type": "rating",
+        "rating": 4.0,
+        "day_offset": 108,
+        "hour": 4
+      }
+    ]
+  }
+]

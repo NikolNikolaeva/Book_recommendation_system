@@ -10,13 +10,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from book_recsys.config import (
-    COLD_START_MAX_INTERACTIONS,
-    MMR_DEFAULT_LAMBDA,
-    WEIGHT_CBF,
-    WEIGHT_CF,
-    WEIGHT_SOCIAL,
-)
+from book_recsys.config import COLD_START_MAX_INTERACTIONS, MMR_DEFAULT_LAMBDA
+from book_recsys.tuning import HybridTuning, get_tuning
 from book_recsys.orm import Book, Interaction, User
 from book_recsys.recommender.cbf import build_cbf_matrix, combined_cbf_scores, survey_explain_fragment
 from book_recsys.recommender.cf_model import CFModel, build_user_item_matrix, interaction_weight
@@ -129,6 +124,7 @@ def hybrid_scores(
     ctx: HybridContext,
     user: User,
     omit_interaction_ids: set[int] | None = None,
+    tuning: HybridTuning | None = None,
 ) -> tuple[np.ndarray, float, float, float]:
     iu = ctx.internal_user_row.get(user.id)
     n_books = len(ctx.books)
@@ -164,16 +160,17 @@ def hybrid_scores(
     social_raw = social_scores_vector(session, user.id, ctx.book_index, n_books)
 
     has_friends = len(friend_ids_for(session, user.id)) > 0
+    t = tuning or get_tuning()
 
     if n_sig < COLD_START_MAX_INTERACTIONS:
-        a, b, g = 0.15, 0.55, 0.15 if has_friends else 0.0
+        a, b, g = t.cold_weight_cf, t.cold_weight_cbf, t.cold_weight_social if has_friends else 0.0
     else:
-        a, b, g = WEIGHT_CF, WEIGHT_CBF, WEIGHT_SOCIAL if has_friends else 0.0
+        a, b, g = t.weight_cf, t.weight_cbf, t.weight_social if has_friends else 0.0
 
     if has_friends and g > 0 and n_books > 0:
         smax = float(social_raw.max())
         if smax > 0.21:
-            g = min(0.32, g * 1.2)
+            g = min(t.social_boost_cap, g * t.social_boost_factor)
 
     pop = ctx.popular
     rest = max(0.0, 1.0 - a - b - g)
@@ -193,16 +190,56 @@ def excluded_book_ids(session: Session, user_id: int) -> set[int]:
     return out
 
 
+def rank_books_hybrid(
+    session: Session,
+    ctx: HybridContext,
+    user: User,
+    *,
+    k: int = 10,
+    omit_interaction_ids: set[int] | None = None,
+    tuning: HybridTuning | None = None,
+    use_mmr: bool = True,
+    with_social: bool = False,
+    for_eval: bool = False,
+    candidate_pool: int = 80,
+) -> list[int]:
+    """Подредени book_id; for_eval=True подрежда всички книги (за leave-last-out)."""
+    t = tuning or get_tuning()
+    scores, _, _, _ = hybrid_scores(session, ctx, user, omit_interaction_ids=omit_interaction_ids, tuning=t)
+    n_books = len(ctx.books)
+    if with_social:
+        soc = social_scores_vector(session, user.id, ctx.book_index, n_books)
+        if float(soc.max()) > 0:
+            scores = t.social_blend_hybrid * scores + t.social_blend_social * soc
+    if for_eval:
+        cand = list(range(n_books))
+    else:
+        exclude = excluded_book_ids(session, user.id)
+        cand = [i for i in range(n_books) if ctx.books[i].id not in exclude]
+    cand.sort(key=lambda i: float(scores[i]), reverse=True)
+    cand = cand[:candidate_pool]
+    if not cand:
+        return []
+    if not use_mmr or len(cand) <= k:
+        return [ctx.books[i].id for i in cand[:k]]
+    sim = cosine_similarity(ctx.tfidf_mat[cand], ctx.tfidf_mat[cand])
+    rel = scores[cand]
+    picked_local = _mmr(list(range(len(cand))), rel, sim, k=min(k, len(cand)), lambda_mult=t.mmr_lambda)
+    return [ctx.books[cand[li]].id for li in picked_local]
+
+
 def recommend(
     session: Session,
     ctx: HybridContext,
     user: User,
     k: int = 20,
-    diversity_lambda: float = MMR_DEFAULT_LAMBDA,
+    diversity_lambda: float | None = None,
     candidate_pool: int = 80,
     omit_interaction_ids: set[int] | None = None,
 ) -> list[tuple[Book, float, str]]:
-    scores, _, _, _ = hybrid_scores(session, ctx, user, omit_interaction_ids=omit_interaction_ids)
+    t = get_tuning()
+    mmr_l = diversity_lambda if diversity_lambda is not None else t.mmr_lambda
+    scores, _, _, _ = hybrid_scores(session, ctx, user, omit_interaction_ids=omit_interaction_ids, tuning=t)
     exclude = excluded_book_ids(session, user.id)
 
     cand = [i for i in range(len(ctx.books)) if ctx.books[i].id not in exclude]
@@ -212,7 +249,7 @@ def recommend(
     sim = cosine_similarity(ctx.tfidf_mat[cand], ctx.tfidf_mat[cand]) if cand else np.array([[1.0]])
     rel = scores[cand]
     idxs = list(range(len(cand)))
-    picked_local = _mmr(idxs, rel, sim, k=min(k, len(idxs)), lambda_mult=diversity_lambda)
+    picked_local = _mmr(idxs, rel, sim, k=min(k, len(idxs)), lambda_mult=mmr_l)
     picked_global = [cand[li] for li in picked_local]
 
     interactions = list(session.scalars(select(Interaction).where(Interaction.user_id == user.id)))

@@ -1,0 +1,13 @@
+{
+  "weight_cf": 0.35,
+  "weight_cbf": 0.35,
+  "weight_social": 0.25,
+  "cold_weight_cf": 0.15,
+  "cold_weight_cbf": 0.55,
+  "cold_weight_social": 0.15,
+  "social_boost_factor": 1.2,
+  "social_boost_cap": 0.32,
+  "social_blend_hybrid": 0.65,
+  "social_blend_social": 0.35,
+  "mmr_lambda": 0.7
+}

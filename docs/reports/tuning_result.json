@@ -1,0 +1,23 @@
+{
+  "tuning": {
+    "weight_cf": 0.35,
+    "weight_cbf": 0.35,
+    "weight_social": 0.25,
+    "cold_weight_cf": 0.15,
+    "cold_weight_cbf": 0.55,
+    "cold_weight_social": 0.15,
+    "social_boost_factor": 1.2,
+    "social_boost_cap": 0.32,
+    "social_blend_hybrid": 0.65,
+    "social_blend_social": 0.35,
+    "mmr_lambda": 0.7
+  },
+  "meta": {
+    "baseline_combined_ndcg": 0.05341004986590353,
+    "best_combined_ndcg": 0.057891698692581366,
+    "improvement": 0.004481648826677835,
+    "combinations_tried": 135,
+    "selected_mmr_lambda": 0.7
+  },
+  "path": "/Users/gabriela.kosteva/Desktop/Book_recommendation_system/data/tuned_hybrid.json"
+}

@@ -1,0 +1,54 @@
+{
+  "tag": "v2",
+  "k": 10,
+  "users_in_fold": 43,
+  "stats": {
+    "books": 206,
+    "users": 43,
+    "interactions": 693,
+    "friendships": 110
+  },
+  "rows": [
+    {
+      "method": "Popular",
+      "method_bg": "Popular",
+      "precision_at_k": 0.0209,
+      "recall_at_k": 0.2093,
+      "ndcg_at_k": 0.1036,
+      "overall": 0.1113
+    },
+    {
+      "method": "CBF-only",
+      "method_bg": "CBF-only",
+      "precision_at_k": 0.0116,
+      "recall_at_k": 0.1163,
+      "ndcg_at_k": 0.0612,
+      "overall": 0.063
+    },
+    {
+      "method": "CF-only",
+      "method_bg": "CF-only",
+      "precision_at_k": 0.0116,
+      "recall_at_k": 0.1163,
+      "ndcg_at_k": 0.04,
+      "overall": 0.056
+    },
+    {
+      "method": "Hybrid",
+      "method_bg": "Hybrid",
+      "precision_at_k": 0.0093,
+      "recall_at_k": 0.093,
+      "ndcg_at_k": 0.0348,
+      "overall": 0.0457
+    },
+    {
+      "method": "Hybrid+Social",
+      "method_bg": "Hybrid+Social",
+      "precision_at_k": 0.0116,
+      "recall_at_k": 0.1163,
+      "ndcg_at_k": 0.0441,
+      "overall": 0.0573
+    }
+  ],
+  "note": "Leave-last-out по последен положителен сигнал (like/rating≥4/finished) за всеки потребител; CF се тренира без отделените взаимодействия; CBF/hybrid за потребителя без неговия отделен ред."
+}

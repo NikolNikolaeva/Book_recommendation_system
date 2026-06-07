@@ -1,6 +1,12 @@
 # Локални секрети (SESSION_SECRET и др.)
 .env
 
+# Matplotlib cache (локален при pipeline)
+.mplconfig/
+
+# macOS
+.DS_Store
+
 # Python
 __pycache__/
 *.py[cod]
@@ -11,6 +17,8 @@ venv/
 
 # Локална SQLite — генерира се при работа; books.csv остава в Git
 data/*.db
+# Tuning output се генерира локално; включи в commit ако искаш фиксиран v4
+# data/tuned_hybrid.json
 *.db-journal
 *.db-wal
 *.db-shm

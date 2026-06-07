@@ -227,8 +227,26 @@ function refreshDrawerActionsIfOpen(bookId) {
   if (quick) renderQuickActions(quick, bookId);
 }
 
+const PLACEHOLDER_COVER = "/static/placeholder-cover.svg";
+
 function coverSrc(book) {
-  return book.cover_url || "/static/placeholder-cover.svg";
+  if (book && book.id) return `/api/books/${book.id}/cover`;
+  return book?.cover_url || PLACEHOLDER_COVER;
+}
+
+function bindCoverImage(img, book, { lazy = true, useCoverClass = true } = {}) {
+  if (useCoverClass) img.classList.add("cover");
+  img.alt = "";
+  img.decoding = "async";
+  img.referrerPolicy = "no-referrer";
+  if (lazy) img.loading = "lazy";
+  img.onerror = () => {
+    if (img.dataset.fallback === "1") return;
+    img.dataset.fallback = "1";
+    img.onerror = null;
+    img.src = PLACEHOLDER_COVER;
+  };
+  img.src = coverSrc(book);
 }
 
 function bookCard(book, extra = {}, options = {}) {
@@ -237,13 +255,7 @@ function bookCard(book, extra = {}, options = {}) {
   wrap.className = "card";
   wrap.dataset.bookId = String(book.id);
   const cover = document.createElement("img");
-  cover.className = "cover";
-  cover.alt = "";
-  cover.loading = "lazy";
-  cover.src = coverSrc(book);
-  cover.onerror = () => {
-    cover.src = "/static/placeholder-cover.svg";
-  };
+  bindCoverImage(cover, book);
   wrap.appendChild(cover);
   const body = document.createElement("div");
   body.className = "card-body";
@@ -366,7 +378,7 @@ async function openBookDrawer(bookId) {
     `;
   drawer.innerHTML = `
     <div class="drawer-inner" data-drawer-book-id="${bookId}">
-      <img class="drawer-cover" src="${escapeHtml(coverSrc(book))}" alt="" />
+      <img class="drawer-cover" alt="" />
       <h2>${escapeHtml(book.title)}</h2>
       <p class="meta">${escapeHtml(book.authors)}</p>
       ${statsHtml}
@@ -387,10 +399,7 @@ async function openBookDrawer(bookId) {
     </div>
   `;
   const dimg = drawer.querySelector(".drawer-cover");
-  if (dimg)
-    dimg.onerror = () => {
-      dimg.src = "/static/placeholder-cover.svg";
-    };
+  if (dimg) bindCoverImage(dimg, book, { lazy: false, useCoverClass: false });
   const list = drawer.querySelector("#simList");
   sim.forEach((b) => {
     const btn = document.createElement("button");
@@ -905,7 +914,7 @@ async function loadTasteDeck() {
       const row = document.createElement("div");
       row.className = "taste-row";
       row.innerHTML = `
-        <img src="${escapeHtml(coverSrc(b))}" alt="" class="taste-cover" />
+        <img alt="" class="taste-cover" />
         <div class="taste-info">
           <strong>${escapeHtml(b.title)}</strong>
           <div class="meta">${escapeHtml(b.authors)}</div>
@@ -917,9 +926,7 @@ async function loadTasteDeck() {
         </div>
       `;
       const img = row.querySelector(".taste-cover");
-      img.onerror = () => {
-        img.src = "/static/placeholder-cover.svg";
-      };
+      bindCoverImage(img, b, { lazy: false, useCoverClass: false });
       row.querySelectorAll("[data-r]").forEach((btn) => {
         btn.addEventListener("click", () => {
           const bid = Number(btn.closest(".taste-actions").dataset.bid);

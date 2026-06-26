@@ -935,6 +935,11 @@ def book_social(
 
 
 @app.get("/api/evaluation", response_model=EvaluationReport)
-def evaluation(k: int = 10, db: Session = Depends(get_db)) -> EvaluationReport:
+def evaluation(
+    k: int = 10,
+    max_users: int = 120,
+    db: Session = Depends(get_db),
+) -> EvaluationReport:
     kk = max(1, min(50, k))
-    return build_evaluation_report(db, k=kk)
+    mu = None if max_users <= 0 else max(10, min(2000, int(max_users)))
+    return build_evaluation_report(db, k=kk, max_users=mu)

@@ -211,13 +211,29 @@ def rank_books_hybrid(
         soc = social_scores_vector(session, user.id, ctx.book_index, n_books)
         if float(soc.max()) > 0:
             scores = t.social_blend_hybrid * scores + t.social_blend_social * soc
+    pool = max(1, min(int(candidate_pool), n_books))
     if for_eval:
-        cand = list(range(n_books))
+        # Fast top-N selection: we only need the best `candidate_pool` for MMR / Top-K.
+        if pool >= n_books:
+            cand = np.argsort(-scores).tolist()
+        else:
+            idx = np.argpartition(-scores, pool - 1)[:pool]
+            idx = idx[np.argsort(-scores[idx])]
+            cand = idx.tolist()
     else:
         exclude = excluded_book_ids(session, user.id)
         cand = [i for i in range(n_books) if ctx.books[i].id not in exclude]
-    cand.sort(key=lambda i: float(scores[i]), reverse=True)
-    cand = cand[:candidate_pool]
+        if not cand:
+            return []
+        if len(cand) > pool:
+            arr = np.array(cand, dtype=np.int32)
+            sub = scores[arr]
+            pick = np.argpartition(-sub, pool - 1)[:pool]
+            arr = arr[pick]
+            arr = arr[np.argsort(-scores[arr])]
+            cand = arr.tolist()
+        else:
+            cand.sort(key=lambda i: float(scores[i]), reverse=True)
     if not cand:
         return []
     if not use_mmr or len(cand) <= k:

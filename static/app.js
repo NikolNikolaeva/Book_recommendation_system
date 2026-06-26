@@ -294,7 +294,6 @@ function bookCard(book, extra = {}, options = {}) {
 
     const hint = document.createElement("p");
     hint.className = "card-interact-hint";
-    hint.textContent = "Натисни звезди или бутоните — виж съобщение горе. Празно място отваря детайли.";
 
     foot.appendChild(rowStars);
     foot.appendChild(rowQuick);
@@ -551,7 +550,7 @@ async function loadFriendRecommendations() {
   } finally {
     if (btn) {
       btn.disabled = false;
-      btn.textContent = oldText || "Обнови";
+      // btn.textContent = oldText || "Обнови";
     }
   }
 }
@@ -810,7 +809,6 @@ async function loadEval() {
   const kSel = document.getElementById("evalK");
   const btn = document.getElementById("btnRunEval");
   const noteEl = document.getElementById("evalNote");
-  const repEl = document.getElementById("evalReport");
   const tb = document.querySelector("#evalTable tbody");
   if (!tb) return;
 
@@ -819,28 +817,19 @@ async function loadEval() {
     btn.disabled = true;
     btn.textContent = "Изчисляване…";
   }
-  if (noteEl) noteEl.textContent = "Изчисляване на метриките…";
+  if (noteEl) noteEl.textContent = "Изчисляване…";
 
   try {
     const rep = await api(`/api/evaluation?k=${k}`);
     tb.innerHTML = "";
     rep.rows.forEach((r) => {
       const tr = document.createElement("tr");
-      tr.innerHTML = `<td>${escapeHtml(r.method)}</td><td>${r.precision_at_k}</td><td>${r.recall_at_k}</td><td>${r.ndcg_at_k}</td>`;
+      tr.innerHTML = `<td>${escapeHtml(r.method)}</td><td>${r.precision_at_k}</td><td>${r.recall_at_k}</td><td>${r.ndcg_at_k}</td><td>${r.intra_list_similarity}</td><td>${r.long_tail_coverage}</td>`;
       tb.appendChild(tr);
     });
     evalLoadedOnce = true;
     if (noteEl) {
-      const fold = rep.users_in_fold ? ` · fold users: ${rep.users_in_fold}` : "";
-      noteEl.textContent = (rep.note || "").trim() ? `${rep.note}${fold}` : (fold ? fold.slice(3) : "");
-    }
-    if (repEl) {
-      repEl.innerHTML = `
-        <p><strong>Проблем:</strong> ${escapeHtml(rep.problem_statement || "")}</p>
-        <p><strong>Хипотеза:</strong> ${escapeHtml(rep.hypothesis || "")}</p>
-        <p><strong>Методология:</strong> ${escapeHtml(rep.methodology || "")}</p>
-        <p><strong>Ограничения:</strong> ${escapeHtml(rep.limitations || "")}</p>
-      `;
+      noteEl.textContent = rep.users_in_fold ? `${rep.users_in_fold} потребители в fold` : "";
     }
     showToast("Оценката е готова.");
   } catch (e) {

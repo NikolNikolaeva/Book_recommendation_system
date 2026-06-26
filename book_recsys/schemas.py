@@ -181,6 +181,14 @@ class EvaluationRow(BaseModel):
     precision_at_k: float
     recall_at_k: float
     ndcg_at_k: float
+    intra_list_similarity: float = Field(
+        default=0.0,
+        description="Средна двойна cosine similarity в Top-K (по-ниска → по-разнообразен списък).",
+    )
+    long_tail_coverage: float = Field(
+        default=0.0,
+        description="Доля от Top-K препоръки към long-tail книги (извън top 20% по популярност).",
+    )
 
 
 class EvaluationReport(BaseModel):

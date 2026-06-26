@@ -188,19 +188,16 @@
               <button type="button" class="btn primary" id="btnRunEval">Изчисли</button>
             </div>
           </div>
-          <p class="hint" id="evalNote"></p>
+          <p class="hint">Offline сравнение на методите. Натисни „Изчисли“.</p>
+          <p class="hint eval-status" id="evalNote" aria-live="polite"></p>
           <div class="table-wrap">
             <table class="eval-table" id="evalTable">
               <thead>
-                <tr><th>Метод</th><th>P@K</th><th>R@K</th><th>NDCG@K</th></tr>
+                <tr><th>Метод</th><th>P@K</th><th>R@K</th><th>NDCG@K</th><th>Intra-sim↓</th><th>Long-tail</th></tr>
               </thead>
               <tbody></tbody>
             </table>
           </div>
-          <details class="eval-details">
-            <summary>Методология и ограничения (за отчет)</summary>
-            <div class="eval-details__body" id="evalReport"></div>
-          </details>
         </section>
       </main>
     </div>
